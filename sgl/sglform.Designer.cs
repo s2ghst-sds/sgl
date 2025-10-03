@@ -68,6 +68,12 @@
             dgv_rotas = new DataGridView();
             label1 = new Label();
             textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            label2 = new Label();
+            textBox3 = new TextBox();
+            label3 = new Label();
+            textBox4 = new TextBox();
+            label4 = new Label();
             tabcontrol.SuspendLayout();
             tab_rotas.SuspendLayout();
             tab_veiculos.SuspendLayout();
@@ -92,11 +98,18 @@
             tabcontrol.Location = new Point(12, 12);
             tabcontrol.Name = "tabcontrol";
             tabcontrol.SelectedIndex = 0;
-            tabcontrol.Size = new Size(981, 488);
+            tabcontrol.Size = new Size(806, 488);
             tabcontrol.TabIndex = 0;
             // 
             // tab_rotas
             // 
+            tab_rotas.BackColor = Color.Gainsboro;
+            tab_rotas.Controls.Add(textBox4);
+            tab_rotas.Controls.Add(label4);
+            tab_rotas.Controls.Add(textBox3);
+            tab_rotas.Controls.Add(label3);
+            tab_rotas.Controls.Add(textBox2);
+            tab_rotas.Controls.Add(label2);
             tab_rotas.Controls.Add(textBox1);
             tab_rotas.Controls.Add(label1);
             tab_rotas.Controls.Add(dgv_rotas);
@@ -104,10 +117,9 @@
             tab_rotas.Location = new Point(4, 28);
             tab_rotas.Name = "tab_rotas";
             tab_rotas.Padding = new Padding(3);
-            tab_rotas.Size = new Size(973, 456);
+            tab_rotas.Size = new Size(798, 456);
             tab_rotas.TabIndex = 0;
             tab_rotas.Text = "rotas";
-            tab_rotas.UseVisualStyleBackColor = true;
             // 
             // tab_veiculos
             // 
@@ -396,7 +408,7 @@
             // 
             // toolStrip4
             // 
-            toolStrip4.BackColor = Color.Transparent;
+            toolStrip4.BackColor = Color.White;
             toolStrip4.Dock = DockStyle.Left;
             toolStrip4.ImageScalingSize = new Size(30, 30);
             toolStrip4.Items.AddRange(new ToolStripItem[] { toolStripButton16, toolStripButton17, toolStripButton18, toolStripButton19, toolStripButton20 });
@@ -457,7 +469,7 @@
             // dgv_rotas
             // 
             dgv_rotas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_rotas.Location = new Point(551, 6);
+            dgv_rotas.Location = new Point(376, 6);
             dgv_rotas.Name = "dgv_rotas";
             dgv_rotas.Size = new Size(416, 444);
             dgv_rotas.TabIndex = 2;
@@ -465,7 +477,8 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(71, 39);
+            label1.BackColor = Color.Transparent;
+            label1.Location = new Point(94, 33);
             label1.Name = "label1";
             label1.Size = new Size(45, 19);
             label1.TabIndex = 3;
@@ -473,19 +486,70 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(71, 61);
+            textBox1.Location = new Point(94, 55);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(222, 26);
             textBox1.TabIndex = 4;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(94, 113);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(222, 26);
+            textBox2.TabIndex = 6;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Location = new Point(94, 91);
+            label2.Name = "label2";
+            label2.Size = new Size(45, 19);
+            label2.TabIndex = 5;
+            label2.Text = "label2";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(94, 172);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(222, 26);
+            textBox3.TabIndex = 8;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Location = new Point(94, 150);
+            label3.Name = "label3";
+            label3.Size = new Size(45, 19);
+            label3.TabIndex = 7;
+            label3.Text = "label3";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(94, 229);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(222, 26);
+            textBox4.TabIndex = 10;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Location = new Point(94, 207);
+            label4.Name = "label4";
+            label4.Size = new Size(45, 19);
+            label4.TabIndex = 9;
+            label4.Text = "label4";
             // 
             // sglform
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1005, 512);
+            ClientSize = new Size(831, 512);
             Controls.Add(tabcontrol);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "sglform";
             StartPosition = FormStartPosition.CenterScreen;
@@ -557,5 +621,11 @@
         private ToolStripButton toolStripButton5;
         private Label label1;
         public TextBox textBox1;
+        public TextBox textBox3;
+        private Label label3;
+        public TextBox textBox2;
+        private Label label2;
+        public TextBox textBox4;
+        private Label label4;
     }
 }
