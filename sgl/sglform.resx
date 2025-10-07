@@ -121,7 +121,7 @@
     <value>646, 96</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="toolStripButton16.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_save_rotas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMEAAAC+CAYAAACMNmuIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA2NSURBVHhe7Z39cxXlFcf9k2rlLZCAgISXhASpCCKgCKKJ
@@ -185,7 +185,7 @@
         r141dGr/m2++yWy3w3/+Px96ahRvdfclAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton17.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_editar_rotas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAN8AAADQCAYAAACHr7T5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABANSURBVHhe7Z3rcxVFGof9k3aVWwiXLVBR1N21FLzsikRl
@@ -260,7 +260,7 @@
         roUprgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="toolStripButton18.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_pesquisar_rotas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANYAAADXCAYAAABmv6+LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABIHSURBVHhe7Z35c1VFHsX5k2YUQdmFAQSVGZSAGyDgjGzu
@@ -343,7 +343,7 @@
         RVEURVEURVEURVEURVEURVEUlS79B9HW6f/9QqVDAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton19.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_excluir_rotas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKEAAACxCAYAAACsh90tAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAlnSURBVHhe7Z27axVNGMa9JSYSE1ELGxUstDjnL1DBTpLC
@@ -389,7 +389,7 @@
         vb29sZj4SyV+4HF8SDc4OBiLh2EU5rFnGIZhGIZhmKXIf6xGuYHfcYGDAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton20.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_sair_rotas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANkAAADOCAYAAACzbadVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAuDSURBVHhe7Z3tbxTHHcfzJzUEOxgbm4cG4ycIBNOiNmkc
@@ -447,7 +447,7 @@
   <metadata name="tool_veiculos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>148, 172</value>
   </metadata>
-  <data name="toolStripButton11.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_save_veiculos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMEAAAC+CAYAAACMNmuIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA2NSURBVHhe7Z39cxXlFcf9k2rlLZCAgISXhASpCCKgCKKJ
@@ -511,7 +511,7 @@
         r141dGr/m2++yWy3w3/+Px96ahRvdfclAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton12.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_editar_veiculos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAN8AAADQCAYAAACHr7T5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABANSURBVHhe7Z3rcxVFGof9k3aVWwiXLVBR1N21FLzsikRl
@@ -586,7 +586,7 @@
         roUprgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="toolStripButton13.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_pesquisar_veiculos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANYAAADXCAYAAABmv6+LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABITSURBVHhe7Z35c1VFHsXzJ80ogrILAwgqMygBN0DAGdnG
@@ -669,7 +669,7 @@
         VzDh8kEaiqIoiqIoiqIoiqIoiqIoiqIoiqIoiqIoKl36L2H49Zkf5B+AAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton14.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_excluir_veiculos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKEAAACxCAYAAACsh90tAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAlnSURBVHhe7Z27axVNGMa9JSYSE1ELGxUstDjnL1DBTpLC
@@ -715,7 +715,7 @@
         vb29sZj4SyV+4HF8SDc4OBiLh2EU5rFnGIZhGIZhmKXIf6xGuYHfcYGDAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton15.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_sair_veiculos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANkAAADOCAYAAACzbadVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAuHSURBVHhe7Z3tbxTHHcfzJzUEOxgbm4cG4ycIBNOiNmkc
@@ -773,7 +773,7 @@
   <metadata name="tool_motoristas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>69, 107</value>
   </metadata>
-  <data name="toolStripButton6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_salvar_motoristas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMEAAAC+CAYAAACMNmuIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA2NSURBVHhe7Z39cxXlFcf9k2rlLZCAgISXhASpCCKgCKKJ
@@ -837,7 +837,7 @@
         r141dGr/m2++yWy3w3/+Px96ahRvdfclAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_editar_motoristas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAN8AAADQCAYAAACHr7T5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABANSURBVHhe7Z3rcxVFGof9k3aVWwiXLVBR1N21FLzsikRl
@@ -912,7 +912,7 @@
         roUprgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="toolStripButton8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_pesquisar_motoristas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANYAAADXCAYAAABmv6+LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABITSURBVHhe7Z35c1VFHsXzJ80ogrILAwgqMygBN0DAGdnG
@@ -995,7 +995,7 @@
         VzDh8kEaiqIoiqIoiqIoiqIoiqIoiqIoiqIoiqIoKl36L2H49Zkf5B+AAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_excluir_motoristas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKEAAACxCAYAAACsh90tAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAlnSURBVHhe7Z27axVNGMa9JSYSE1ELGxUstDjnL1DBTpLC
@@ -1041,7 +1041,7 @@
         vb29sZj4SyV+4HF8SDc4OBiLh2EU5rFnGIZhGIZhmKXIf6xGuYHfcYGDAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton10.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_sair_motoristas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANkAAADOCAYAAACzbadVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAuDSURBVHhe7Z3tbxTHHcfzJzUEOxgbm4cG4ycIBNOiNmkc
@@ -1099,7 +1099,7 @@
   <metadata name="tool_combustivel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>253, 153</value>
   </metadata>
-  <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_salvar_combustivel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMEAAAC+CAYAAACMNmuIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA2NSURBVHhe7Z39cxXlFcf9k2rlLZCAgISXhASpCCKgCKKJ
@@ -1163,7 +1163,7 @@
         r141dGr/m2++yWy3w3/+Px96ahRvdfclAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_editar_combustivel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAN8AAADQCAYAAACHr7T5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABANSURBVHhe7Z3rcxVFGof9k3aVWwiXLVBR1N21FLzsikRl
@@ -1238,7 +1238,7 @@
         roUprgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="toolStripButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_pesquisar_combustivel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANYAAADXCAYAAABmv6+LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABITSURBVHhe7Z35c1VFHsXzJ80ogrILAwgqMygBN0DAGdnG
@@ -1321,7 +1321,7 @@
         VzDh8kEaiqIoiqIoiqIoiqIoiqIoiqIoiqIoiqIoKl36L2H49Zkf5B+AAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_excluir_combustivel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKEAAACxCAYAAACsh90tAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAlnSURBVHhe7Z27axVNGMa9JSYSE1ELGxUstDjnL1DBTpLC
@@ -1367,7 +1367,7 @@
         vb29sZj4SyV+4HF8SDc4OBiLh2EU5rFnGIZhGIZhmKXIf6xGuYHfcYGDAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButton5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_sair_combustivel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANkAAADOCAYAAACzbadVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAuDSURBVHhe7Z3tbxTHHcfzJzUEOxgbm4cG4ycIBNOiNmkc
@@ -1425,7 +1425,7 @@
   <metadata name="tool_viagem.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>244, 80</value>
   </metadata>
-  <data name="tool_saveicon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_salvar_viagens.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMEAAAC+CAYAAACMNmuIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA2NSURBVHhe7Z39cxXlFcf9k2rlLZCAgISXhASpCCKgCKKJ
@@ -1564,7 +1564,7 @@
         roUprgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="tool_searchicon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_searchicon_viagens.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANYAAADXCAYAAABmv6+LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABITSURBVHhe7Z35c1VFHsXzJ80ogrILAwgqMygBN0DAGdnG
@@ -1647,7 +1647,7 @@
         VzDh8kEaiqIoiqIoiqIoiqIoiqIoiqIoiqIoiqIoKl36L2H49Zkf5B+AAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="tool_trashicon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_trashicon_viagens.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKEAAACxCAYAAACsh90tAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAlnSURBVHhe7Z27axVNGMa9JSYSE1ELGxUstDjnL1DBTpLC
@@ -1693,7 +1693,7 @@
         vb29sZj4SyV+4HF8SDc4OBiLh2EU5rFnGIZhGIZhmKXIf6xGuYHfcYGDAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="tool_exiticon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tool_exiticon_viagens.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANkAAADOCAYAAACzbadVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAuDSURBVHhe7Z3tbxTHHcfzJzUEOxgbm4cG4ycIBNOiNmkc
@@ -1749,6 +1749,6 @@
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>124</value>
+    <value>58</value>
   </metadata>
 </root>

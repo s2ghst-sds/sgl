@@ -41,11 +41,15 @@
             lbl_id_rota = new Label();
             dgv_rotas = new DataGridView();
             tool_rotas = new ToolStrip();
-            toolStripButton16 = new ToolStripButton();
-            toolStripButton17 = new ToolStripButton();
-            toolStripButton18 = new ToolStripButton();
-            toolStripButton19 = new ToolStripButton();
-            toolStripButton20 = new ToolStripButton();
+            tool_save_rotas = new ToolStripButton();
+            toolStripSeparator20 = new ToolStripSeparator();
+            tool_editar_rotas = new ToolStripButton();
+            toolStripSeparator5 = new ToolStripSeparator();
+            tool_pesquisar_rotas = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
+            tool_excluir_rotas = new ToolStripButton();
+            toolStripSeparator19 = new ToolStripSeparator();
+            tool_sair_rotas = new ToolStripButton();
             tab_veiculos = new TabPage();
             txt_cargamax_veiculo = new TextBox();
             lbl_cargamax_veiculo = new Label();
@@ -59,15 +63,15 @@
             lbl_id_veiculo = new Label();
             dgv_veiculos = new DataGridView();
             tool_veiculos = new ToolStrip();
-            toolStripButton11 = new ToolStripButton();
+            tool_save_veiculos = new ToolStripButton();
             toolStripSeparator2 = new ToolStripSeparator();
-            toolStripButton12 = new ToolStripButton();
+            tool_editar_veiculos = new ToolStripButton();
             toolStripSeparator3 = new ToolStripSeparator();
-            toolStripButton13 = new ToolStripButton();
+            tool_pesquisar_veiculos = new ToolStripButton();
             toolStripSeparator6 = new ToolStripSeparator();
-            toolStripButton14 = new ToolStripButton();
+            tool_excluir_veiculos = new ToolStripButton();
             toolStripSeparator4 = new ToolStripSeparator();
-            toolStripButton15 = new ToolStripButton();
+            tool_sair_veiculos = new ToolStripButton();
             tab_motoristas = new TabPage();
             txt_telefone_motorista = new TextBox();
             lbl_telefone_motorista = new Label();
@@ -79,11 +83,15 @@
             lbl_id_motorista = new Label();
             dataGridView1 = new DataGridView();
             tool_motoristas = new ToolStrip();
-            toolStripButton6 = new ToolStripButton();
-            toolStripButton7 = new ToolStripButton();
-            toolStripButton8 = new ToolStripButton();
-            toolStripButton9 = new ToolStripButton();
-            toolStripButton10 = new ToolStripButton();
+            tool_salvar_motoristas = new ToolStripButton();
+            toolStripSeparator15 = new ToolStripSeparator();
+            tool_editar_motoristas = new ToolStripButton();
+            toolStripSeparator16 = new ToolStripSeparator();
+            tool_pesquisar_motoristas = new ToolStripButton();
+            toolStripSeparator17 = new ToolStripSeparator();
+            tool_excluir_motoristas = new ToolStripButton();
+            toolStripSeparator18 = new ToolStripSeparator();
+            tool_sair_motoristas = new ToolStripButton();
             tab_combustivel = new TabPage();
             combo_tipo_combustivel = new ComboBox();
             dtp_consulta_combustivel = new DateTimePicker();
@@ -95,11 +103,15 @@
             label17 = new Label();
             dataGridView2 = new DataGridView();
             tool_combustivel = new ToolStrip();
-            toolStripButton1 = new ToolStripButton();
-            toolStripButton2 = new ToolStripButton();
-            toolStripButton3 = new ToolStripButton();
-            toolStripButton4 = new ToolStripButton();
-            toolStripButton5 = new ToolStripButton();
+            tool_salvar_combustivel = new ToolStripButton();
+            toolStripSeparator14 = new ToolStripSeparator();
+            tool_editar_combustivel = new ToolStripButton();
+            toolStripSeparator13 = new ToolStripSeparator();
+            tool_pesquisar_combustivel = new ToolStripButton();
+            toolStripSeparator11 = new ToolStripSeparator();
+            tool_excluir_combustivel = new ToolStripButton();
+            toolStripSeparator12 = new ToolStripSeparator();
+            tool_sair_combustivel = new ToolStripButton();
             tab_viagem = new TabPage();
             dtp_chegada_viagem = new DateTimePicker();
             dtp_saida_viagem = new DateTimePicker();
@@ -115,27 +127,15 @@
             lbl_id_viagem = new Label();
             dataGridView3 = new DataGridView();
             tool_viagem = new ToolStrip();
-            tool_saveicon = new ToolStripButton();
-            tool_editicon = new ToolStripButton();
-            tool_searchicon = new ToolStripButton();
-            tool_trashicon = new ToolStripButton();
-            tool_exiticon = new ToolStripButton();
-            toolStripSeparator7 = new ToolStripSeparator();
+            tool_salvar_viagens = new ToolStripButton();
             toolStripSeparator8 = new ToolStripSeparator();
+            tool_editicon = new ToolStripButton();
             toolStripSeparator9 = new ToolStripSeparator();
+            tool_searchicon_viagens = new ToolStripButton();
             toolStripSeparator10 = new ToolStripSeparator();
-            toolStripSeparator11 = new ToolStripSeparator();
-            toolStripSeparator12 = new ToolStripSeparator();
-            toolStripSeparator13 = new ToolStripSeparator();
-            toolStripSeparator14 = new ToolStripSeparator();
-            toolStripSeparator15 = new ToolStripSeparator();
-            toolStripSeparator16 = new ToolStripSeparator();
-            toolStripSeparator17 = new ToolStripSeparator();
-            toolStripSeparator18 = new ToolStripSeparator();
-            toolStripSeparator1 = new ToolStripSeparator();
-            toolStripSeparator5 = new ToolStripSeparator();
-            toolStripSeparator19 = new ToolStripSeparator();
-            toolStripSeparator20 = new ToolStripSeparator();
+            tool_trashicon_viagens = new ToolStripButton();
+            toolStripSeparator7 = new ToolStripSeparator();
+            tool_exiticon_viagens = new ToolStripButton();
             tabcontrol.SuspendLayout();
             tab_rotas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_rotas).BeginInit();
@@ -273,7 +273,7 @@
             tool_rotas.Dock = DockStyle.Left;
             tool_rotas.GripStyle = ToolStripGripStyle.Hidden;
             tool_rotas.ImageScalingSize = new Size(30, 30);
-            tool_rotas.Items.AddRange(new ToolStripItem[] { toolStripButton16, toolStripSeparator20, toolStripButton17, toolStripSeparator5, toolStripButton18, toolStripSeparator1, toolStripButton19, toolStripSeparator19, toolStripButton20 });
+            tool_rotas.Items.AddRange(new ToolStripItem[] { tool_save_rotas, toolStripSeparator20, tool_editar_rotas, toolStripSeparator5, tool_pesquisar_rotas, toolStripSeparator1, tool_excluir_rotas, toolStripSeparator19, tool_sair_rotas });
             tool_rotas.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             tool_rotas.Location = new Point(3, 3);
             tool_rotas.Name = "tool_rotas";
@@ -283,52 +283,74 @@
             tool_rotas.TabIndex = 1;
             tool_rotas.Text = "toolStrip4";
             // 
-            // toolStripButton16
+            // tool_save_rotas
             // 
-            toolStripButton16.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton16.Image = (Image)resources.GetObject("toolStripButton16.Image");
-            toolStripButton16.ImageTransparentColor = Color.White;
-            toolStripButton16.Name = "toolStripButton16";
-            toolStripButton16.Size = new Size(32, 34);
-            toolStripButton16.Text = "tool_saveicon";
+            tool_save_rotas.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_save_rotas.Image = (Image)resources.GetObject("tool_save_rotas.Image");
+            tool_save_rotas.ImageTransparentColor = Color.White;
+            tool_save_rotas.Name = "tool_save_rotas";
+            tool_save_rotas.Size = new Size(32, 34);
+            tool_save_rotas.Text = "tool_saveicon";
+            tool_save_rotas.Click += tool_save_rotas_Click;
             // 
-            // toolStripButton17
+            // toolStripSeparator20
             // 
-            toolStripButton17.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton17.Image = (Image)resources.GetObject("toolStripButton17.Image");
-            toolStripButton17.ImageTransparentColor = Color.White;
-            toolStripButton17.Name = "toolStripButton17";
-            toolStripButton17.Size = new Size(32, 34);
-            toolStripButton17.Text = "tool_editicon";
+            toolStripSeparator20.Name = "toolStripSeparator20";
+            toolStripSeparator20.Size = new Size(32, 6);
             // 
-            // toolStripButton18
+            // tool_editar_rotas
             // 
-            toolStripButton18.BackColor = Color.WhiteSmoke;
-            toolStripButton18.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton18.Image = (Image)resources.GetObject("toolStripButton18.Image");
-            toolStripButton18.ImageTransparentColor = Color.White;
-            toolStripButton18.Name = "toolStripButton18";
-            toolStripButton18.Size = new Size(32, 34);
-            toolStripButton18.Text = "tool_searchicon";
+            tool_editar_rotas.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_editar_rotas.Image = (Image)resources.GetObject("tool_editar_rotas.Image");
+            tool_editar_rotas.ImageTransparentColor = Color.White;
+            tool_editar_rotas.Name = "tool_editar_rotas";
+            tool_editar_rotas.Size = new Size(32, 34);
+            tool_editar_rotas.Text = "tool_editicon";
             // 
-            // toolStripButton19
+            // toolStripSeparator5
             // 
-            toolStripButton19.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton19.Image = (Image)resources.GetObject("toolStripButton19.Image");
-            toolStripButton19.ImageTransparentColor = Color.White;
-            toolStripButton19.Name = "toolStripButton19";
-            toolStripButton19.Size = new Size(32, 34);
-            toolStripButton19.Text = "tool_trashicon";
+            toolStripSeparator5.Name = "toolStripSeparator5";
+            toolStripSeparator5.Size = new Size(32, 6);
             // 
-            // toolStripButton20
+            // tool_pesquisar_rotas
             // 
-            toolStripButton20.BackColor = Color.WhiteSmoke;
-            toolStripButton20.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton20.Image = (Image)resources.GetObject("toolStripButton20.Image");
-            toolStripButton20.ImageTransparentColor = Color.White;
-            toolStripButton20.Name = "toolStripButton20";
-            toolStripButton20.Size = new Size(32, 34);
-            toolStripButton20.Text = "tool_exiticon";
+            tool_pesquisar_rotas.BackColor = Color.WhiteSmoke;
+            tool_pesquisar_rotas.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_pesquisar_rotas.Image = (Image)resources.GetObject("tool_pesquisar_rotas.Image");
+            tool_pesquisar_rotas.ImageTransparentColor = Color.White;
+            tool_pesquisar_rotas.Name = "tool_pesquisar_rotas";
+            tool_pesquisar_rotas.Size = new Size(32, 34);
+            tool_pesquisar_rotas.Text = "tool_searchicon";
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(32, 6);
+            // 
+            // tool_excluir_rotas
+            // 
+            tool_excluir_rotas.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_excluir_rotas.Image = (Image)resources.GetObject("tool_excluir_rotas.Image");
+            tool_excluir_rotas.ImageTransparentColor = Color.White;
+            tool_excluir_rotas.Name = "tool_excluir_rotas";
+            tool_excluir_rotas.Size = new Size(32, 34);
+            tool_excluir_rotas.Text = "tool_trashicon";
+            // 
+            // toolStripSeparator19
+            // 
+            toolStripSeparator19.Name = "toolStripSeparator19";
+            toolStripSeparator19.Size = new Size(32, 6);
+            // 
+            // tool_sair_rotas
+            // 
+            tool_sair_rotas.BackColor = Color.WhiteSmoke;
+            tool_sair_rotas.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_sair_rotas.Image = (Image)resources.GetObject("tool_sair_rotas.Image");
+            tool_sair_rotas.ImageTransparentColor = Color.White;
+            tool_sair_rotas.Name = "tool_sair_rotas";
+            tool_sair_rotas.Size = new Size(32, 34);
+            tool_sair_rotas.Text = "tool_exiticon";
+            tool_sair_rotas.Click += tool_sair_rotas_Click;
             // 
             // tab_veiculos
             // 
@@ -456,7 +478,7 @@
             tool_veiculos.Dock = DockStyle.Left;
             tool_veiculos.GripStyle = ToolStripGripStyle.Hidden;
             tool_veiculos.ImageScalingSize = new Size(30, 30);
-            tool_veiculos.Items.AddRange(new ToolStripItem[] { toolStripButton11, toolStripSeparator2, toolStripButton12, toolStripSeparator3, toolStripButton13, toolStripSeparator6, toolStripButton14, toolStripSeparator4, toolStripButton15 });
+            tool_veiculos.Items.AddRange(new ToolStripItem[] { tool_save_veiculos, toolStripSeparator2, tool_editar_veiculos, toolStripSeparator3, tool_pesquisar_veiculos, toolStripSeparator6, tool_excluir_veiculos, toolStripSeparator4, tool_sair_veiculos });
             tool_veiculos.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             tool_veiculos.Location = new Point(3, 3);
             tool_veiculos.Name = "tool_veiculos";
@@ -466,75 +488,75 @@
             tool_veiculos.TabIndex = 1;
             tool_veiculos.Text = "toolStrip3";
             // 
-            // toolStripButton11
+            // tool_save_veiculos
             // 
-            toolStripButton11.BackColor = Color.WhiteSmoke;
-            toolStripButton11.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton11.Image = (Image)resources.GetObject("toolStripButton11.Image");
-            toolStripButton11.ImageTransparentColor = Color.White;
-            toolStripButton11.Name = "toolStripButton11";
-            toolStripButton11.Size = new Size(32, 34);
-            toolStripButton11.Text = "tool_saveicon";
+            tool_save_veiculos.BackColor = Color.WhiteSmoke;
+            tool_save_veiculos.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_save_veiculos.Image = (Image)resources.GetObject("tool_save_veiculos.Image");
+            tool_save_veiculos.ImageTransparentColor = Color.White;
+            tool_save_veiculos.Name = "tool_save_veiculos";
+            tool_save_veiculos.Size = new Size(32, 34);
+            tool_save_veiculos.Text = "tool_saveicon";
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
             toolStripSeparator2.Size = new Size(32, 6);
             // 
-            // toolStripButton12
+            // tool_editar_veiculos
             // 
-            toolStripButton12.BackColor = Color.WhiteSmoke;
-            toolStripButton12.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton12.Image = (Image)resources.GetObject("toolStripButton12.Image");
-            toolStripButton12.ImageTransparentColor = Color.White;
-            toolStripButton12.Name = "toolStripButton12";
-            toolStripButton12.Size = new Size(32, 34);
-            toolStripButton12.Text = "tool_editicon";
+            tool_editar_veiculos.BackColor = Color.WhiteSmoke;
+            tool_editar_veiculos.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_editar_veiculos.Image = (Image)resources.GetObject("tool_editar_veiculos.Image");
+            tool_editar_veiculos.ImageTransparentColor = Color.White;
+            tool_editar_veiculos.Name = "tool_editar_veiculos";
+            tool_editar_veiculos.Size = new Size(32, 34);
+            tool_editar_veiculos.Text = "tool_editicon";
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
             toolStripSeparator3.Size = new Size(32, 6);
             // 
-            // toolStripButton13
+            // tool_pesquisar_veiculos
             // 
-            toolStripButton13.BackColor = Color.WhiteSmoke;
-            toolStripButton13.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton13.Image = (Image)resources.GetObject("toolStripButton13.Image");
-            toolStripButton13.ImageTransparentColor = Color.White;
-            toolStripButton13.Name = "toolStripButton13";
-            toolStripButton13.Size = new Size(32, 34);
-            toolStripButton13.Text = "tool_searchicon";
+            tool_pesquisar_veiculos.BackColor = Color.WhiteSmoke;
+            tool_pesquisar_veiculos.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_pesquisar_veiculos.Image = (Image)resources.GetObject("tool_pesquisar_veiculos.Image");
+            tool_pesquisar_veiculos.ImageTransparentColor = Color.White;
+            tool_pesquisar_veiculos.Name = "tool_pesquisar_veiculos";
+            tool_pesquisar_veiculos.Size = new Size(32, 34);
+            tool_pesquisar_veiculos.Text = "tool_searchicon";
             // 
             // toolStripSeparator6
             // 
             toolStripSeparator6.Name = "toolStripSeparator6";
             toolStripSeparator6.Size = new Size(32, 6);
             // 
-            // toolStripButton14
+            // tool_excluir_veiculos
             // 
-            toolStripButton14.BackColor = Color.WhiteSmoke;
-            toolStripButton14.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton14.Image = (Image)resources.GetObject("toolStripButton14.Image");
-            toolStripButton14.ImageTransparentColor = Color.White;
-            toolStripButton14.Name = "toolStripButton14";
-            toolStripButton14.Size = new Size(32, 34);
-            toolStripButton14.Text = "tool_trashicon";
+            tool_excluir_veiculos.BackColor = Color.WhiteSmoke;
+            tool_excluir_veiculos.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_excluir_veiculos.Image = (Image)resources.GetObject("tool_excluir_veiculos.Image");
+            tool_excluir_veiculos.ImageTransparentColor = Color.White;
+            tool_excluir_veiculos.Name = "tool_excluir_veiculos";
+            tool_excluir_veiculos.Size = new Size(32, 34);
+            tool_excluir_veiculos.Text = "tool_trashicon";
             // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
             toolStripSeparator4.Size = new Size(32, 6);
             // 
-            // toolStripButton15
+            // tool_sair_veiculos
             // 
-            toolStripButton15.BackColor = Color.WhiteSmoke;
-            toolStripButton15.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton15.Image = (Image)resources.GetObject("toolStripButton15.Image");
-            toolStripButton15.ImageTransparentColor = Color.White;
-            toolStripButton15.Name = "toolStripButton15";
-            toolStripButton15.Size = new Size(32, 34);
-            toolStripButton15.Text = "tool_exiticon";
+            tool_sair_veiculos.BackColor = Color.WhiteSmoke;
+            tool_sair_veiculos.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_sair_veiculos.Image = (Image)resources.GetObject("tool_sair_veiculos.Image");
+            tool_sair_veiculos.ImageTransparentColor = Color.White;
+            tool_sair_veiculos.Name = "tool_sair_veiculos";
+            tool_sair_veiculos.Size = new Size(32, 34);
+            tool_sair_veiculos.Text = "tool_exiticon";
             // 
             // tab_motoristas
             // 
@@ -642,7 +664,7 @@
             tool_motoristas.Dock = DockStyle.Left;
             tool_motoristas.GripStyle = ToolStripGripStyle.Hidden;
             tool_motoristas.ImageScalingSize = new Size(30, 30);
-            tool_motoristas.Items.AddRange(new ToolStripItem[] { toolStripButton6, toolStripSeparator15, toolStripButton7, toolStripSeparator16, toolStripButton8, toolStripSeparator17, toolStripButton9, toolStripSeparator18, toolStripButton10 });
+            tool_motoristas.Items.AddRange(new ToolStripItem[] { tool_salvar_motoristas, toolStripSeparator15, tool_editar_motoristas, toolStripSeparator16, tool_pesquisar_motoristas, toolStripSeparator17, tool_excluir_motoristas, toolStripSeparator18, tool_sair_motoristas });
             tool_motoristas.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             tool_motoristas.Location = new Point(3, 3);
             tool_motoristas.Name = "tool_motoristas";
@@ -652,51 +674,71 @@
             tool_motoristas.TabIndex = 1;
             tool_motoristas.Text = "toolStrip2";
             // 
-            // toolStripButton6
+            // tool_salvar_motoristas
             // 
-            toolStripButton6.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton6.Image = (Image)resources.GetObject("toolStripButton6.Image");
-            toolStripButton6.ImageTransparentColor = Color.White;
-            toolStripButton6.Name = "toolStripButton6";
-            toolStripButton6.Size = new Size(32, 34);
-            toolStripButton6.Text = "tool_saveicon";
+            tool_salvar_motoristas.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_salvar_motoristas.Image = (Image)resources.GetObject("tool_salvar_motoristas.Image");
+            tool_salvar_motoristas.ImageTransparentColor = Color.White;
+            tool_salvar_motoristas.Name = "tool_salvar_motoristas";
+            tool_salvar_motoristas.Size = new Size(32, 34);
+            tool_salvar_motoristas.Text = "tool_saveicon";
             // 
-            // toolStripButton7
+            // toolStripSeparator15
             // 
-            toolStripButton7.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton7.Image = (Image)resources.GetObject("toolStripButton7.Image");
-            toolStripButton7.ImageTransparentColor = Color.White;
-            toolStripButton7.Name = "toolStripButton7";
-            toolStripButton7.Size = new Size(32, 34);
-            toolStripButton7.Text = "tool_editicon";
+            toolStripSeparator15.Name = "toolStripSeparator15";
+            toolStripSeparator15.Size = new Size(32, 6);
             // 
-            // toolStripButton8
+            // tool_editar_motoristas
             // 
-            toolStripButton8.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton8.Image = (Image)resources.GetObject("toolStripButton8.Image");
-            toolStripButton8.ImageTransparentColor = Color.White;
-            toolStripButton8.Name = "toolStripButton8";
-            toolStripButton8.Size = new Size(32, 34);
-            toolStripButton8.Text = "tool_searchicon";
+            tool_editar_motoristas.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_editar_motoristas.Image = (Image)resources.GetObject("tool_editar_motoristas.Image");
+            tool_editar_motoristas.ImageTransparentColor = Color.White;
+            tool_editar_motoristas.Name = "tool_editar_motoristas";
+            tool_editar_motoristas.Size = new Size(32, 34);
+            tool_editar_motoristas.Text = "tool_editicon";
             // 
-            // toolStripButton9
+            // toolStripSeparator16
             // 
-            toolStripButton9.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton9.Image = (Image)resources.GetObject("toolStripButton9.Image");
-            toolStripButton9.ImageTransparentColor = Color.White;
-            toolStripButton9.Name = "toolStripButton9";
-            toolStripButton9.Size = new Size(32, 34);
-            toolStripButton9.Text = "tool_trashicon";
+            toolStripSeparator16.Name = "toolStripSeparator16";
+            toolStripSeparator16.Size = new Size(32, 6);
             // 
-            // toolStripButton10
+            // tool_pesquisar_motoristas
             // 
-            toolStripButton10.BackColor = Color.WhiteSmoke;
-            toolStripButton10.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton10.Image = (Image)resources.GetObject("toolStripButton10.Image");
-            toolStripButton10.ImageTransparentColor = Color.White;
-            toolStripButton10.Name = "toolStripButton10";
-            toolStripButton10.Size = new Size(32, 34);
-            toolStripButton10.Text = "tool_exiticon";
+            tool_pesquisar_motoristas.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_pesquisar_motoristas.Image = (Image)resources.GetObject("tool_pesquisar_motoristas.Image");
+            tool_pesquisar_motoristas.ImageTransparentColor = Color.White;
+            tool_pesquisar_motoristas.Name = "tool_pesquisar_motoristas";
+            tool_pesquisar_motoristas.Size = new Size(32, 34);
+            tool_pesquisar_motoristas.Text = "tool_searchicon";
+            // 
+            // toolStripSeparator17
+            // 
+            toolStripSeparator17.Name = "toolStripSeparator17";
+            toolStripSeparator17.Size = new Size(32, 6);
+            // 
+            // tool_excluir_motoristas
+            // 
+            tool_excluir_motoristas.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_excluir_motoristas.Image = (Image)resources.GetObject("tool_excluir_motoristas.Image");
+            tool_excluir_motoristas.ImageTransparentColor = Color.White;
+            tool_excluir_motoristas.Name = "tool_excluir_motoristas";
+            tool_excluir_motoristas.Size = new Size(32, 34);
+            tool_excluir_motoristas.Text = "tool_trashicon";
+            // 
+            // toolStripSeparator18
+            // 
+            toolStripSeparator18.Name = "toolStripSeparator18";
+            toolStripSeparator18.Size = new Size(32, 6);
+            // 
+            // tool_sair_motoristas
+            // 
+            tool_sair_motoristas.BackColor = Color.WhiteSmoke;
+            tool_sair_motoristas.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_sair_motoristas.Image = (Image)resources.GetObject("tool_sair_motoristas.Image");
+            tool_sair_motoristas.ImageTransparentColor = Color.White;
+            tool_sair_motoristas.Name = "tool_sair_motoristas";
+            tool_sair_motoristas.Size = new Size(32, 34);
+            tool_sair_motoristas.Text = "tool_exiticon";
             // 
             // tab_combustivel
             // 
@@ -711,10 +753,10 @@
             tab_combustivel.Controls.Add(label17);
             tab_combustivel.Controls.Add(dataGridView2);
             tab_combustivel.Controls.Add(tool_combustivel);
-            tab_combustivel.Location = new Point(4, 28);
+            tab_combustivel.Location = new Point(4, 24);
             tab_combustivel.Name = "tab_combustivel";
             tab_combustivel.Padding = new Padding(3);
-            tab_combustivel.Size = new Size(798, 456);
+            tab_combustivel.Size = new Size(798, 460);
             tab_combustivel.TabIndex = 3;
             tab_combustivel.Text = "combustível";
             // 
@@ -808,64 +850,84 @@
             tool_combustivel.Dock = DockStyle.Left;
             tool_combustivel.GripStyle = ToolStripGripStyle.Hidden;
             tool_combustivel.ImageScalingSize = new Size(30, 30);
-            tool_combustivel.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripSeparator14, toolStripButton2, toolStripSeparator13, toolStripButton3, toolStripSeparator11, toolStripButton4, toolStripSeparator12, toolStripButton5 });
+            tool_combustivel.Items.AddRange(new ToolStripItem[] { tool_salvar_combustivel, toolStripSeparator14, tool_editar_combustivel, toolStripSeparator13, tool_pesquisar_combustivel, toolStripSeparator11, tool_excluir_combustivel, toolStripSeparator12, tool_sair_combustivel });
             tool_combustivel.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             tool_combustivel.Location = new Point(3, 3);
             tool_combustivel.Name = "tool_combustivel";
-            tool_combustivel.Size = new Size(35, 450);
+            tool_combustivel.Size = new Size(35, 454);
             tool_combustivel.Stretch = true;
             tool_combustivel.TabIndex = 1;
             tool_combustivel.Text = "tool_combustivel";
             // 
-            // toolStripButton1
+            // tool_salvar_combustivel
             // 
-            toolStripButton1.BackColor = Color.WhiteSmoke;
-            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
-            toolStripButton1.ImageTransparentColor = Color.White;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(32, 34);
-            toolStripButton1.Text = "tool_saveicon";
+            tool_salvar_combustivel.BackColor = Color.WhiteSmoke;
+            tool_salvar_combustivel.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_salvar_combustivel.Image = (Image)resources.GetObject("tool_salvar_combustivel.Image");
+            tool_salvar_combustivel.ImageTransparentColor = Color.White;
+            tool_salvar_combustivel.Name = "tool_salvar_combustivel";
+            tool_salvar_combustivel.Size = new Size(32, 34);
+            tool_salvar_combustivel.Text = "tool_saveicon";
             // 
-            // toolStripButton2
+            // toolStripSeparator14
             // 
-            toolStripButton2.BackColor = Color.WhiteSmoke;
-            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
-            toolStripButton2.ImageTransparentColor = Color.White;
-            toolStripButton2.Name = "toolStripButton2";
-            toolStripButton2.Size = new Size(32, 34);
-            toolStripButton2.Text = "tool_editicon";
+            toolStripSeparator14.Name = "toolStripSeparator14";
+            toolStripSeparator14.Size = new Size(32, 6);
             // 
-            // toolStripButton3
+            // tool_editar_combustivel
             // 
-            toolStripButton3.BackColor = Color.WhiteSmoke;
-            toolStripButton3.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton3.Image = (Image)resources.GetObject("toolStripButton3.Image");
-            toolStripButton3.ImageTransparentColor = Color.White;
-            toolStripButton3.Name = "toolStripButton3";
-            toolStripButton3.Size = new Size(32, 34);
-            toolStripButton3.Text = "tool_searchicon";
+            tool_editar_combustivel.BackColor = Color.WhiteSmoke;
+            tool_editar_combustivel.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_editar_combustivel.Image = (Image)resources.GetObject("tool_editar_combustivel.Image");
+            tool_editar_combustivel.ImageTransparentColor = Color.White;
+            tool_editar_combustivel.Name = "tool_editar_combustivel";
+            tool_editar_combustivel.Size = new Size(32, 34);
+            tool_editar_combustivel.Text = "tool_editicon";
             // 
-            // toolStripButton4
+            // toolStripSeparator13
             // 
-            toolStripButton4.BackColor = Color.WhiteSmoke;
-            toolStripButton4.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton4.Image = (Image)resources.GetObject("toolStripButton4.Image");
-            toolStripButton4.ImageTransparentColor = Color.White;
-            toolStripButton4.Name = "toolStripButton4";
-            toolStripButton4.Size = new Size(32, 34);
-            toolStripButton4.Text = "tool_trashicon";
+            toolStripSeparator13.Name = "toolStripSeparator13";
+            toolStripSeparator13.Size = new Size(32, 6);
             // 
-            // toolStripButton5
+            // tool_pesquisar_combustivel
             // 
-            toolStripButton5.BackColor = Color.WhiteSmoke;
-            toolStripButton5.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton5.Image = (Image)resources.GetObject("toolStripButton5.Image");
-            toolStripButton5.ImageTransparentColor = Color.White;
-            toolStripButton5.Name = "toolStripButton5";
-            toolStripButton5.Size = new Size(32, 34);
-            toolStripButton5.Text = "tool_exiticon";
+            tool_pesquisar_combustivel.BackColor = Color.WhiteSmoke;
+            tool_pesquisar_combustivel.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_pesquisar_combustivel.Image = (Image)resources.GetObject("tool_pesquisar_combustivel.Image");
+            tool_pesquisar_combustivel.ImageTransparentColor = Color.White;
+            tool_pesquisar_combustivel.Name = "tool_pesquisar_combustivel";
+            tool_pesquisar_combustivel.Size = new Size(32, 34);
+            tool_pesquisar_combustivel.Text = "tool_searchicon";
+            // 
+            // toolStripSeparator11
+            // 
+            toolStripSeparator11.Name = "toolStripSeparator11";
+            toolStripSeparator11.Size = new Size(32, 6);
+            // 
+            // tool_excluir_combustivel
+            // 
+            tool_excluir_combustivel.BackColor = Color.WhiteSmoke;
+            tool_excluir_combustivel.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_excluir_combustivel.Image = (Image)resources.GetObject("tool_excluir_combustivel.Image");
+            tool_excluir_combustivel.ImageTransparentColor = Color.White;
+            tool_excluir_combustivel.Name = "tool_excluir_combustivel";
+            tool_excluir_combustivel.Size = new Size(32, 34);
+            tool_excluir_combustivel.Text = "tool_trashicon";
+            // 
+            // toolStripSeparator12
+            // 
+            toolStripSeparator12.Name = "toolStripSeparator12";
+            toolStripSeparator12.Size = new Size(32, 6);
+            // 
+            // tool_sair_combustivel
+            // 
+            tool_sair_combustivel.BackColor = Color.WhiteSmoke;
+            tool_sair_combustivel.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_sair_combustivel.Image = (Image)resources.GetObject("tool_sair_combustivel.Image");
+            tool_sair_combustivel.ImageTransparentColor = Color.White;
+            tool_sair_combustivel.Name = "tool_sair_combustivel";
+            tool_sair_combustivel.Size = new Size(32, 34);
+            tool_sair_combustivel.Text = "tool_exiticon";
             // 
             // tab_viagem
             // 
@@ -889,18 +951,18 @@
             tab_viagem.Padding = new Padding(3);
             tab_viagem.Size = new Size(798, 456);
             tab_viagem.TabIndex = 4;
-            tab_viagem.Text = "viagem";
+            tab_viagem.Text = "viagens";
             // 
             // dtp_chegada_viagem
             // 
-            dtp_chegada_viagem.Location = new Point(91, 176);
+            dtp_chegada_viagem.Location = new Point(92, 172);
             dtp_chegada_viagem.Name = "dtp_chegada_viagem";
             dtp_chegada_viagem.Size = new Size(222, 26);
             dtp_chegada_viagem.TabIndex = 36;
             // 
             // dtp_saida_viagem
             // 
-            dtp_saida_viagem.Location = new Point(91, 117);
+            dtp_saida_viagem.Location = new Point(92, 113);
             dtp_saida_viagem.Name = "dtp_saida_viagem";
             dtp_saida_viagem.Size = new Size(222, 26);
             dtp_saida_viagem.TabIndex = 35;
@@ -908,7 +970,7 @@
             // txt_motorista_viagem
             // 
             txt_motorista_viagem.BackColor = Color.White;
-            txt_motorista_viagem.Location = new Point(91, 349);
+            txt_motorista_viagem.Location = new Point(92, 345);
             txt_motorista_viagem.Name = "txt_motorista_viagem";
             txt_motorista_viagem.Size = new Size(222, 26);
             txt_motorista_viagem.TabIndex = 34;
@@ -917,7 +979,7 @@
             // 
             lbl_motorista_viagem.AutoSize = true;
             lbl_motorista_viagem.BackColor = Color.Transparent;
-            lbl_motorista_viagem.Location = new Point(91, 327);
+            lbl_motorista_viagem.Location = new Point(92, 323);
             lbl_motorista_viagem.Name = "lbl_motorista_viagem";
             lbl_motorista_viagem.Size = new Size(91, 19);
             lbl_motorista_viagem.TabIndex = 33;
@@ -926,7 +988,7 @@
             // txt_rota_viagem
             // 
             txt_rota_viagem.BackColor = Color.White;
-            txt_rota_viagem.Location = new Point(91, 292);
+            txt_rota_viagem.Location = new Point(92, 288);
             txt_rota_viagem.Name = "txt_rota_viagem";
             txt_rota_viagem.Size = new Size(222, 26);
             txt_rota_viagem.TabIndex = 32;
@@ -935,7 +997,7 @@
             // 
             lbl_rota_viagem.AutoSize = true;
             lbl_rota_viagem.BackColor = Color.Transparent;
-            lbl_rota_viagem.Location = new Point(91, 270);
+            lbl_rota_viagem.Location = new Point(92, 266);
             lbl_rota_viagem.Name = "lbl_rota_viagem";
             lbl_rota_viagem.Size = new Size(61, 19);
             lbl_rota_viagem.TabIndex = 31;
@@ -944,7 +1006,7 @@
             // txt_veiculo_viagem
             // 
             txt_veiculo_viagem.BackColor = Color.White;
-            txt_veiculo_viagem.Location = new Point(91, 233);
+            txt_veiculo_viagem.Location = new Point(92, 229);
             txt_veiculo_viagem.Name = "txt_veiculo_viagem";
             txt_veiculo_viagem.Size = new Size(222, 26);
             txt_veiculo_viagem.TabIndex = 30;
@@ -953,7 +1015,7 @@
             // 
             lbl_veiculo_viagem.AutoSize = true;
             lbl_veiculo_viagem.BackColor = Color.Transparent;
-            lbl_veiculo_viagem.Location = new Point(91, 211);
+            lbl_veiculo_viagem.Location = new Point(92, 207);
             lbl_veiculo_viagem.Name = "lbl_veiculo_viagem";
             lbl_veiculo_viagem.Size = new Size(76, 19);
             lbl_veiculo_viagem.TabIndex = 29;
@@ -963,7 +1025,7 @@
             // 
             label20.AutoSize = true;
             label20.BackColor = Color.Transparent;
-            label20.Location = new Point(91, 154);
+            label20.Location = new Point(92, 150);
             label20.Name = "label20";
             label20.Size = new Size(118, 19);
             label20.TabIndex = 27;
@@ -973,7 +1035,7 @@
             // 
             lbl_datasaida_viagem.AutoSize = true;
             lbl_datasaida_viagem.BackColor = Color.Transparent;
-            lbl_datasaida_viagem.Location = new Point(91, 95);
+            lbl_datasaida_viagem.Location = new Point(92, 91);
             lbl_datasaida_viagem.Name = "lbl_datasaida_viagem";
             lbl_datasaida_viagem.Size = new Size(98, 19);
             lbl_datasaida_viagem.TabIndex = 25;
@@ -982,7 +1044,7 @@
             // txt_id_viagem
             // 
             txt_id_viagem.BackColor = Color.White;
-            txt_id_viagem.Location = new Point(91, 59);
+            txt_id_viagem.Location = new Point(92, 55);
             txt_id_viagem.Name = "txt_id_viagem";
             txt_id_viagem.Size = new Size(222, 26);
             txt_id_viagem.TabIndex = 24;
@@ -991,7 +1053,7 @@
             // 
             lbl_id_viagem.AutoSize = true;
             lbl_id_viagem.BackColor = Color.Transparent;
-            lbl_id_viagem.Location = new Point(91, 37);
+            lbl_id_viagem.Location = new Point(92, 33);
             lbl_id_viagem.Name = "lbl_id_viagem";
             lbl_id_viagem.Size = new Size(77, 19);
             lbl_id_viagem.TabIndex = 23;
@@ -1013,7 +1075,7 @@
             tool_viagem.Dock = DockStyle.Left;
             tool_viagem.GripStyle = ToolStripGripStyle.Hidden;
             tool_viagem.ImageScalingSize = new Size(30, 30);
-            tool_viagem.Items.AddRange(new ToolStripItem[] { tool_saveicon, toolStripSeparator8, tool_editicon, toolStripSeparator9, tool_searchicon, toolStripSeparator10, tool_trashicon, toolStripSeparator7, tool_exiticon });
+            tool_viagem.Items.AddRange(new ToolStripItem[] { tool_salvar_viagens, toolStripSeparator8, tool_editicon, toolStripSeparator9, tool_searchicon_viagens, toolStripSeparator10, tool_trashicon_viagens, toolStripSeparator7, tool_exiticon_viagens });
             tool_viagem.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             tool_viagem.Location = new Point(3, 3);
             tool_viagem.Name = "tool_viagem";
@@ -1022,15 +1084,20 @@
             tool_viagem.TabIndex = 0;
             tool_viagem.Text = "tool_crudtools";
             // 
-            // tool_saveicon
+            // tool_salvar_viagens
             // 
-            tool_saveicon.BackColor = Color.WhiteSmoke;
-            tool_saveicon.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tool_saveicon.Image = (Image)resources.GetObject("tool_saveicon.Image");
-            tool_saveicon.ImageTransparentColor = Color.White;
-            tool_saveicon.Name = "tool_saveicon";
-            tool_saveicon.Size = new Size(32, 34);
-            tool_saveicon.Text = "tool_saveicon";
+            tool_salvar_viagens.BackColor = Color.WhiteSmoke;
+            tool_salvar_viagens.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_salvar_viagens.Image = (Image)resources.GetObject("tool_salvar_viagens.Image");
+            tool_salvar_viagens.ImageTransparentColor = Color.White;
+            tool_salvar_viagens.Name = "tool_salvar_viagens";
+            tool_salvar_viagens.Size = new Size(32, 34);
+            tool_salvar_viagens.Text = "tool_salvar_viagens";
+            // 
+            // toolStripSeparator8
+            // 
+            toolStripSeparator8.Name = "toolStripSeparator8";
+            toolStripSeparator8.Size = new Size(32, 6);
             // 
             // tool_editicon
             // 
@@ -1040,117 +1107,52 @@
             tool_editicon.ImageTransparentColor = Color.White;
             tool_editicon.Name = "tool_editicon";
             tool_editicon.Size = new Size(32, 34);
-            tool_editicon.Text = "tool_editicon";
-            // 
-            // tool_searchicon
-            // 
-            tool_searchicon.BackColor = Color.WhiteSmoke;
-            tool_searchicon.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tool_searchicon.Image = (Image)resources.GetObject("tool_searchicon.Image");
-            tool_searchicon.ImageTransparentColor = Color.White;
-            tool_searchicon.Name = "tool_searchicon";
-            tool_searchicon.Size = new Size(32, 34);
-            tool_searchicon.Text = "tool_searchicon";
-            // 
-            // tool_trashicon
-            // 
-            tool_trashicon.BackColor = Color.WhiteSmoke;
-            tool_trashicon.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tool_trashicon.Image = (Image)resources.GetObject("tool_trashicon.Image");
-            tool_trashicon.ImageTransparentColor = Color.White;
-            tool_trashicon.Name = "tool_trashicon";
-            tool_trashicon.Size = new Size(32, 34);
-            tool_trashicon.Text = "tool_trashicon";
-            // 
-            // tool_exiticon
-            // 
-            tool_exiticon.BackColor = Color.WhiteSmoke;
-            tool_exiticon.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tool_exiticon.Image = (Image)resources.GetObject("tool_exiticon.Image");
-            tool_exiticon.ImageTransparentColor = Color.White;
-            tool_exiticon.Name = "tool_exiticon";
-            tool_exiticon.Size = new Size(32, 34);
-            tool_exiticon.Text = "tool_exiticon";
-            // 
-            // toolStripSeparator7
-            // 
-            toolStripSeparator7.Name = "toolStripSeparator7";
-            toolStripSeparator7.Size = new Size(32, 6);
-            // 
-            // toolStripSeparator8
-            // 
-            toolStripSeparator8.Name = "toolStripSeparator8";
-            toolStripSeparator8.Size = new Size(32, 6);
+            tool_editicon.Text = "tool_editar_viagens";
             // 
             // toolStripSeparator9
             // 
             toolStripSeparator9.Name = "toolStripSeparator9";
             toolStripSeparator9.Size = new Size(32, 6);
             // 
+            // tool_searchicon_viagens
+            // 
+            tool_searchicon_viagens.BackColor = Color.WhiteSmoke;
+            tool_searchicon_viagens.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_searchicon_viagens.Image = (Image)resources.GetObject("tool_searchicon_viagens.Image");
+            tool_searchicon_viagens.ImageTransparentColor = Color.White;
+            tool_searchicon_viagens.Name = "tool_searchicon_viagens";
+            tool_searchicon_viagens.Size = new Size(32, 34);
+            tool_searchicon_viagens.Text = "tool_searchicon";
+            // 
             // toolStripSeparator10
             // 
             toolStripSeparator10.Name = "toolStripSeparator10";
             toolStripSeparator10.Size = new Size(32, 6);
             // 
-            // toolStripSeparator11
+            // tool_trashicon_viagens
             // 
-            toolStripSeparator11.Name = "toolStripSeparator11";
-            toolStripSeparator11.Size = new Size(32, 6);
+            tool_trashicon_viagens.BackColor = Color.WhiteSmoke;
+            tool_trashicon_viagens.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_trashicon_viagens.Image = (Image)resources.GetObject("tool_trashicon_viagens.Image");
+            tool_trashicon_viagens.ImageTransparentColor = Color.White;
+            tool_trashicon_viagens.Name = "tool_trashicon_viagens";
+            tool_trashicon_viagens.Size = new Size(32, 34);
+            tool_trashicon_viagens.Text = "tool_trashicon";
             // 
-            // toolStripSeparator12
+            // toolStripSeparator7
             // 
-            toolStripSeparator12.Name = "toolStripSeparator12";
-            toolStripSeparator12.Size = new Size(32, 6);
+            toolStripSeparator7.Name = "toolStripSeparator7";
+            toolStripSeparator7.Size = new Size(32, 6);
             // 
-            // toolStripSeparator13
+            // tool_exiticon_viagens
             // 
-            toolStripSeparator13.Name = "toolStripSeparator13";
-            toolStripSeparator13.Size = new Size(32, 6);
-            // 
-            // toolStripSeparator14
-            // 
-            toolStripSeparator14.Name = "toolStripSeparator14";
-            toolStripSeparator14.Size = new Size(32, 6);
-            // 
-            // toolStripSeparator15
-            // 
-            toolStripSeparator15.Name = "toolStripSeparator15";
-            toolStripSeparator15.Size = new Size(32, 6);
-            // 
-            // toolStripSeparator16
-            // 
-            toolStripSeparator16.Name = "toolStripSeparator16";
-            toolStripSeparator16.Size = new Size(32, 6);
-            // 
-            // toolStripSeparator17
-            // 
-            toolStripSeparator17.Name = "toolStripSeparator17";
-            toolStripSeparator17.Size = new Size(32, 6);
-            // 
-            // toolStripSeparator18
-            // 
-            toolStripSeparator18.Name = "toolStripSeparator18";
-            toolStripSeparator18.Size = new Size(32, 6);
-            // 
-            // toolStripSeparator1
-            // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(32, 6);
-            // 
-            // toolStripSeparator5
-            // 
-            toolStripSeparator5.Name = "toolStripSeparator5";
-            toolStripSeparator5.Size = new Size(32, 6);
-            // 
-            // toolStripSeparator19
-            // 
-            toolStripSeparator19.Name = "toolStripSeparator19";
-            toolStripSeparator19.Size = new Size(32, 6);
-            // 
-            // toolStripSeparator20
-            // 
-            toolStripSeparator20.Name = "toolStripSeparator20";
-            toolStripSeparator20.Size = new Size(32, 6);
+            tool_exiticon_viagens.BackColor = Color.WhiteSmoke;
+            tool_exiticon_viagens.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tool_exiticon_viagens.Image = (Image)resources.GetObject("tool_exiticon_viagens.Image");
+            tool_exiticon_viagens.ImageTransparentColor = Color.White;
+            tool_exiticon_viagens.Name = "tool_exiticon_viagens";
+            tool_exiticon_viagens.Size = new Size(32, 34);
+            tool_exiticon_viagens.Text = "tool_exiticon";
             // 
             // sglform
             // 
@@ -1203,31 +1205,31 @@
         private TabPage tab_motoristas;
         private TabPage tab_combustivel;
         private TabPage tab_viagem;
-        private ToolStripButton tool_saveicon;
+        private ToolStripButton tool_salvar_viagens;
         private ToolStripButton tool_editicon;
-        private ToolStripButton tool_searchicon;
-        private ToolStripButton tool_trashicon;
-        private ToolStripButton tool_exiticon;
+        private ToolStripButton tool_searchicon_viagens;
+        private ToolStripButton tool_trashicon_viagens;
+        private ToolStripButton tool_exiticon_viagens;
         public ToolStrip tool_viagem;
         private DataGridView dgv_rotas;
         public ToolStrip tool_veiculos;
-        private ToolStripButton toolStripButton11;
-        private ToolStripButton toolStripButton12;
-        private ToolStripButton toolStripButton13;
-        private ToolStripButton toolStripButton14;
-        private ToolStripButton toolStripButton15;
+        private ToolStripButton tool_save_veiculos;
+        private ToolStripButton tool_editar_veiculos;
+        private ToolStripButton tool_pesquisar_veiculos;
+        private ToolStripButton tool_excluir_veiculos;
+        private ToolStripButton tool_sair_veiculos;
         public ToolStrip tool_motoristas;
-        private ToolStripButton toolStripButton6;
-        private ToolStripButton toolStripButton7;
-        private ToolStripButton toolStripButton8;
-        private ToolStripButton toolStripButton9;
-        private ToolStripButton toolStripButton10;
+        private ToolStripButton tool_salvar_motoristas;
+        private ToolStripButton tool_editar_motoristas;
+        private ToolStripButton tool_pesquisar_motoristas;
+        private ToolStripButton tool_excluir_motoristas;
+        private ToolStripButton tool_sair_motoristas;
         public ToolStrip tool_combustivel;
-        private ToolStripButton toolStripButton1;
-        private ToolStripButton toolStripButton2;
-        private ToolStripButton toolStripButton3;
-        private ToolStripButton toolStripButton4;
-        private ToolStripButton toolStripButton5;
+        private ToolStripButton tool_salvar_combustivel;
+        private ToolStripButton tool_editar_combustivel;
+        private ToolStripButton tool_pesquisar_combustivel;
+        private ToolStripButton tool_excluir_combustivel;
+        private ToolStripButton tool_sair_combustivel;
         private Label lbl_id_rota;
         public TextBox txt_id_rota;
         public TextBox txt_destino_rota;
@@ -1284,11 +1286,11 @@
         private ToolStripSeparator toolStripSeparator6;
         private ToolStripSeparator toolStripSeparator4;
         public ToolStrip tool_rotas;
-        private ToolStripButton toolStripButton16;
-        private ToolStripButton toolStripButton17;
-        private ToolStripButton toolStripButton18;
-        private ToolStripButton toolStripButton19;
-        private ToolStripButton toolStripButton20;
+        private ToolStripButton tool_save_rotas;
+        private ToolStripButton tool_editar_rotas;
+        private ToolStripButton tool_pesquisar_rotas;
+        private ToolStripButton tool_excluir_rotas;
+        private ToolStripButton tool_sair_rotas;
         private ToolStripSeparator toolStripSeparator8;
         private ToolStripSeparator toolStripSeparator9;
         private ToolStripSeparator toolStripSeparator10;
