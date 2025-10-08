@@ -16,16 +16,44 @@ namespace sgl
 
         private void tool_save_rotas_Click(object sender, EventArgs e)
         {
-            Operacoes OpSalvar = new Operacoes();
-            OpSalvar.Salvar(
-                txt_origem_rota.Text,
-                txt_destino_rota.Text,
-                txt_distancia_rota.Text,
-                txt_id_rota,
-                txt_origem_rota,
-                txt_destino_rota,
-                txt_distancia_rota
-            );
+
+            //chamamos o metodo de verificação de campos vazios
+            if (ValidarCampos.CamposEstaoVazios(txt_origem_rota, txt_destino_rota))
+            {
+                return;
+            }
+            //metodo de verificação de campo ID desnecessario
+            if (ValidarCampos.CampoIDDesnecessario(txt_id_rota))
+            {
+                return;
+            }
+
+            //como usamos numeric, atribuimos a uma variavel decimal, para armazenar a distancia
+            decimal distancia = num_distancia_rota.Value;
+
+            // Validação adicional da distancia (se necessário):
+            if (distancia <= 0)
+            {
+                MessageBox.Show("A distância deve ser maior que zero!");
+                num_distancia_rota.Focus();
+                return;
+            }
+
+
+            if (Operacoes.Salvar(txt_origem_rota.Text, txt_destino_rota.Text, distancia))
+            {
+                // Só limpa se salvou com SUCESSO
+                Limpar.LimparCampos(txt_origem_rota, txt_destino_rota, num_distancia_rota);
+
+                MessageBox.Show("Salvo com sucesso!");
+            }
+            else
+            {
+                // Mantém os dados preenchidos para o usuário corrigir
+                MessageBox.Show("Erro ao salvar! Verifique os dados.");
+                // Campos NÃO são limpos - usuário pode tentar novamente
+            }
+
         }
 
         private void tool_sair_rotas_Click(object sender, EventArgs e)
@@ -35,108 +63,135 @@ namespace sgl
 
     }
 
-    public class Operacoes
+/*
+ 
+-----------------------------------------------
+ Metodos 
+-----------------------------------------------
+ 
+ */
+
+
+    public class Operacoes 
     {
 
-        MySqlConnection conexao;
-        MySqlCommand comando;
-        MySqlDataAdapter da;
-        MySqlDataReader dr;
-        string sql;
 
-        public void Salvar
+        public static bool Salvar
             (
             string origem,
             string destino,
-            string distancia,
-            TextBox txt_id_rota,
-            TextBox txt_origem_rota,
-            TextBox txt_destino_rota,
-            TextBox txt_distancia_rota)
+            decimal distancia
+            )
+
+
         {
+
+            MySqlConnection conexao;
+            MySqlCommand comando;
+            MySqlDataAdapter da;
+            MySqlDataReader dr;
+            string sql;
+
+
 
             try
             {
                 using
-                (conexao = new MySqlConnection("Server = localhost; Port = 3306; Database = sgl_sgb; Uid = root; Pwd =;"))
+                (conexao = new MySqlConnection("Server = localhost; Port = 3306; Database = sgl_sql; Uid = root; Pwd =;"))
                 {
+                    conexao.Open();
 
-                    sql = "INSERT INTO clientes (origem, destino, distancia) VALUES(@ORIGEM, @DESTINO, @DISTANCIA)";
+                    sql = "INSERT INTO rotas (origem, destino, distancia) VALUES(@ORIGEM, @DESTINO, @DISTANCIA)";
                     comando = new MySqlCommand(sql, conexao);
-                    comando.Parameters.AddWithValue("@ID", origem);
-                    comando.Parameters.AddWithValue("@NOME", destino);
-                    comando.Parameters.AddWithValue("@TELEFONE", distancia);
+                    comando.Parameters.AddWithValue("@ORIGEM", origem);
+                    comando.Parameters.AddWithValue("@DESTINO", destino);
+                    comando.Parameters.AddWithValue("@DISTANCIA", distancia);
                     comando.ExecuteNonQuery();
                 }
+
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao salvar rota! " + ex.Message);
+                return false;
             }
             finally
             {
-                LimparCampos limpar = new LimparCampos();
-                limpar.LimparCamposRota(txt_id_rota, txt_origem_rota, txt_destino_rota, txt_distancia_rota);
             }
 
         }
+
+       
 
 
     };
 
-    public abstract class Validar //validação d campos, classe abstrata base
+/*
+ 
+-----------------------------------------------
+ Validação de campos
+-----------------------------------------------
+ 
+ */
+
+
+
+    public class ValidarCampos // validar campos da rota
     {
 
-        public virtual void CamposSalvarRota(string origem, string destino, string distancia)
+    public static bool CamposEstaoVazios(params TextBox[] campos)
         {
-            //vazio pq vou alterar nas classes derivadas
+            foreach (TextBox campo in campos)
+            {
+                if (string.IsNullOrWhiteSpace(campo.Text))
+                {
+                    MessageBox.Show("O campo " + campo.Name + " deve ser preenchido!");
+                    campo.Focus();
+                    return true;
+                }
+
+            }
+            return false;
         }
-        //desculpa mas ainda n entendi o sentido de polimorfismo aqui
+
+    public static bool CampoIDDesnecessario ( params TextBox[] campos)
+        {
+            foreach (TextBox campo in campos)
+            {
+                if (!string.IsNullOrEmpty(campo.Text))
+                {
+                    MessageBox.Show("O campo ID não deve ser preenchido!");
+                    campo.Clear();
+                    return true;
+                }
+            }
+            return false;
+        }
+            
+    }
     }
 
+/*
+ 
+-----------------------------------------------
+ Metodos auxiliares
+-----------------------------------------------
+ 
+ */
 
-
-    public class ValidarRota : Validar // validar campos da rota
+    public class Limpar
     {
 
-        public override void CamposSalvarRota(string origem, string destino, string distancia) // metodo especifico para validação
-        {
-            if (string.IsNullOrEmpty(origem))
-            {
-                MessageBox.Show("O campo origem precisa ser preenchido!");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(destino))
-            {
-                MessageBox.Show("O campo destino precisa ser preenchido!");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(distancia))
-            {
-                MessageBox.Show("O campo distancia precisa ser preenchido!");
-                return;
-            }
-
-        }
-    }
-
-    public class LimparCampos
+public static void LimparCampos(params Control[] controles)
     {
-    
-        public void LimparCamposRota(TextBox txt_id_rota, TextBox txt_origem_rota, TextBox txt_destino_rota, TextBox txt_distancia_rota)
+        foreach (Control controle in controles)
         {
-            txt_id_rota.Clear();
-            txt_origem_rota.Clear();
-            txt_destino_rota.Clear();
-            txt_distancia_rota.Clear();
+            if (controle is TextBox texto)
+                texto.Clear();
+            else if (controle is NumericUpDown numeric)
+                numeric.Value = numeric.Minimum; // ou 0
         }
-
     }
-
-
-
-
-
 }
+
