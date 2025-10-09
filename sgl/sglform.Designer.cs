@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sglform));
             tabcontrol = new TabControl();
             tab_rotas = new TabPage();
+            num_distancia_rota = new NumericUpDown();
             lbl_distancia_rota = new Label();
             txt_destino_rota = new TextBox();
             lbl_destino_rota = new Label();
@@ -135,9 +136,9 @@
             tool_trashicon_viagens = new ToolStripButton();
             toolStripSeparator7 = new ToolStripSeparator();
             tool_exiticon_viagens = new ToolStripButton();
-            num_distancia_rota = new NumericUpDown();
             tabcontrol.SuspendLayout();
             tab_rotas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)num_distancia_rota).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgv_rotas).BeginInit();
             tool_rotas.SuspendLayout();
             tab_veiculos.SuspendLayout();
@@ -152,7 +153,6 @@
             tab_viagem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             tool_viagem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)num_distancia_rota).BeginInit();
             SuspendLayout();
             // 
             // tabcontrol
@@ -187,6 +187,13 @@
             tab_rotas.Size = new Size(798, 456);
             tab_rotas.TabIndex = 0;
             tab_rotas.Text = "rotas";
+            // 
+            // num_distancia_rota
+            // 
+            num_distancia_rota.Location = new Point(94, 229);
+            num_distancia_rota.Name = "num_distancia_rota";
+            num_distancia_rota.Size = new Size(222, 26);
+            num_distancia_rota.TabIndex = 11;
             // 
             // lbl_distancia_rota
             // 
@@ -299,6 +306,7 @@
             tool_editar_rotas.Name = "tool_editar_rotas";
             tool_editar_rotas.Size = new Size(32, 34);
             tool_editar_rotas.Text = "tool_editicon";
+            tool_editar_rotas.Click += tool_editar_rotas_Click;
             // 
             // toolStripSeparator5
             // 
@@ -314,6 +322,7 @@
             tool_pesquisar_rotas.Name = "tool_pesquisar_rotas";
             tool_pesquisar_rotas.Size = new Size(32, 34);
             tool_pesquisar_rotas.Text = "tool_searchicon";
+            tool_pesquisar_rotas.Click += tool_pesquisar_rotas_Click;
             // 
             // toolStripSeparator1
             // 
@@ -328,6 +337,7 @@
             tool_excluir_rotas.Name = "tool_excluir_rotas";
             tool_excluir_rotas.Size = new Size(32, 34);
             tool_excluir_rotas.Text = "tool_trashicon";
+            tool_excluir_rotas.Click += tool_excluir_rotas_Click;
             // 
             // toolStripSeparator19
             // 
@@ -564,10 +574,10 @@
             tab_motoristas.Controls.Add(lbl_id_motorista);
             tab_motoristas.Controls.Add(dataGridView1);
             tab_motoristas.Controls.Add(tool_motoristas);
-            tab_motoristas.Location = new Point(4, 28);
+            tab_motoristas.Location = new Point(4, 24);
             tab_motoristas.Name = "tab_motoristas";
             tab_motoristas.Padding = new Padding(3);
-            tab_motoristas.Size = new Size(798, 456);
+            tab_motoristas.Size = new Size(798, 460);
             tab_motoristas.TabIndex = 2;
             tab_motoristas.Text = "motoristas";
             // 
@@ -662,7 +672,7 @@
             tool_motoristas.Location = new Point(3, 3);
             tool_motoristas.Name = "tool_motoristas";
             tool_motoristas.RenderMode = ToolStripRenderMode.System;
-            tool_motoristas.Size = new Size(35, 450);
+            tool_motoristas.Size = new Size(35, 454);
             tool_motoristas.Stretch = true;
             tool_motoristas.TabIndex = 1;
             tool_motoristas.Text = "toolStrip2";
@@ -746,10 +756,10 @@
             tab_combustivel.Controls.Add(label17);
             tab_combustivel.Controls.Add(dataGridView2);
             tab_combustivel.Controls.Add(tool_combustivel);
-            tab_combustivel.Location = new Point(4, 28);
+            tab_combustivel.Location = new Point(4, 24);
             tab_combustivel.Name = "tab_combustivel";
             tab_combustivel.Padding = new Padding(3);
-            tab_combustivel.Size = new Size(798, 456);
+            tab_combustivel.Size = new Size(798, 460);
             tab_combustivel.TabIndex = 3;
             tab_combustivel.Text = "combustível";
             // 
@@ -847,7 +857,7 @@
             tool_combustivel.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             tool_combustivel.Location = new Point(3, 3);
             tool_combustivel.Name = "tool_combustivel";
-            tool_combustivel.Size = new Size(35, 450);
+            tool_combustivel.Size = new Size(35, 454);
             tool_combustivel.Stretch = true;
             tool_combustivel.TabIndex = 1;
             tool_combustivel.Text = "tool_combustivel";
@@ -1147,13 +1157,6 @@
             tool_exiticon_viagens.Size = new Size(32, 34);
             tool_exiticon_viagens.Text = "tool_exiticon";
             // 
-            // num_distancia_rota
-            // 
-            num_distancia_rota.Location = new Point(94, 229);
-            num_distancia_rota.Name = "num_distancia_rota";
-            num_distancia_rota.Size = new Size(222, 26);
-            num_distancia_rota.TabIndex = 11;
-            // 
             // sglform
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
@@ -1171,6 +1174,7 @@
             tabcontrol.ResumeLayout(false);
             tab_rotas.ResumeLayout(false);
             tab_rotas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)num_distancia_rota).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgv_rotas).EndInit();
             tool_rotas.ResumeLayout(false);
             tool_rotas.PerformLayout();
@@ -1194,7 +1198,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             tool_viagem.ResumeLayout(false);
             tool_viagem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)num_distancia_rota).EndInit();
             ResumeLayout(false);
         }
 
