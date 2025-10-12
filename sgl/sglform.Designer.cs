@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sglform));
             tabcontrol = new TabControl();
             tab_rotas = new TabPage();
+            lbl_situacao_rota = new Label();
+            cb_situacao_rota = new ComboBox();
             num_distancia_rota = new NumericUpDown();
             lbl_distancia_rota = new Label();
             txt_destino_rota = new TextBox();
@@ -53,6 +56,8 @@
             toolStripSeparator21 = new ToolStripSeparator();
             tool_sair_rotas = new ToolStripButton();
             tab_veiculos = new TabPage();
+            lbl_situacao_veiculo = new Label();
+            cb_situacao_veiculo = new ComboBox();
             num_cargamax_veiculo = new NumericUpDown();
             num_consumo_veiculo = new NumericUpDown();
             lbl_cargamax_veiculo = new Label();
@@ -77,6 +82,8 @@
             toolStripSeparator25 = new ToolStripSeparator();
             tool_sair_veiculos = new ToolStripButton();
             tab_motoristas = new TabPage();
+            lbl_situacao_motorista = new Label();
+            cb_situacao_motorista = new ComboBox();
             txt_telefone_motorista = new TextBox();
             lbl_telefone_motorista = new Label();
             txt_cnh_motorista = new TextBox();
@@ -148,6 +155,7 @@
             tool_vanish_viagem = new ToolStripButton();
             toolStripSeparator22 = new ToolStripSeparator();
             tool_exit_viagens = new ToolStripButton();
+            operacoesRotaBindingSource = new BindingSource(components);
             tabcontrol.SuspendLayout();
             tab_rotas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)num_distancia_rota).BeginInit();
@@ -168,6 +176,7 @@
             tab_viagem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_viagem).BeginInit();
             tool_viagem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)operacoesRotaBindingSource).BeginInit();
             SuspendLayout();
             // 
             // tabcontrol
@@ -177,15 +186,21 @@
             tabcontrol.Controls.Add(tab_motoristas);
             tabcontrol.Controls.Add(tab_combustivel);
             tabcontrol.Controls.Add(tab_viagem);
-            tabcontrol.Location = new Point(12, 12);
+            tabcontrol.Dock = DockStyle.Fill;
+            tabcontrol.ImeMode = ImeMode.NoControl;
+            tabcontrol.ItemSize = new Size(100, 27);
+            tabcontrol.Location = new Point(0, 0);
             tabcontrol.Name = "tabcontrol";
             tabcontrol.SelectedIndex = 0;
-            tabcontrol.Size = new Size(806, 488);
+            tabcontrol.Size = new Size(831, 512);
             tabcontrol.TabIndex = 0;
             // 
             // tab_rotas
             // 
-            tab_rotas.BackColor = Color.Gainsboro;
+            tab_rotas.BackColor = Color.LightSteelBlue;
+            tab_rotas.BackgroundImageLayout = ImageLayout.Stretch;
+            tab_rotas.Controls.Add(lbl_situacao_rota);
+            tab_rotas.Controls.Add(cb_situacao_rota);
             tab_rotas.Controls.Add(num_distancia_rota);
             tab_rotas.Controls.Add(lbl_distancia_rota);
             tab_rotas.Controls.Add(txt_destino_rota);
@@ -196,16 +211,36 @@
             tab_rotas.Controls.Add(lbl_id_rota);
             tab_rotas.Controls.Add(dgv_rotas);
             tab_rotas.Controls.Add(tool_rotas);
-            tab_rotas.Location = new Point(4, 28);
+            tab_rotas.Location = new Point(4, 31);
             tab_rotas.Name = "tab_rotas";
             tab_rotas.Padding = new Padding(3);
-            tab_rotas.Size = new Size(798, 456);
+            tab_rotas.Size = new Size(823, 477);
             tab_rotas.TabIndex = 0;
-            tab_rotas.Text = "rotas";
+            tab_rotas.Text = "Rotas";
+            // 
+            // lbl_situacao_rota
+            // 
+            lbl_situacao_rota.AutoSize = true;
+            lbl_situacao_rota.BackColor = Color.Transparent;
+            lbl_situacao_rota.Location = new Point(94, 265);
+            lbl_situacao_rota.Name = "lbl_situacao_rota";
+            lbl_situacao_rota.Size = new Size(61, 19);
+            lbl_situacao_rota.TabIndex = 42;
+            lbl_situacao_rota.Text = "Situação";
+            // 
+            // cb_situacao_rota
+            // 
+            cb_situacao_rota.FormattingEnabled = true;
+            cb_situacao_rota.Items.AddRange(new object[] { "Ativa", "Desativada" });
+            cb_situacao_rota.Location = new Point(94, 287);
+            cb_situacao_rota.Name = "cb_situacao_rota";
+            cb_situacao_rota.Size = new Size(222, 27);
+            cb_situacao_rota.TabIndex = 41;
             // 
             // num_distancia_rota
             // 
             num_distancia_rota.Location = new Point(94, 229);
+            num_distancia_rota.Maximum = new decimal(new int[] { -727379969, 232, 0, 0 });
             num_distancia_rota.Name = "num_distancia_rota";
             num_distancia_rota.Size = new Size(222, 26);
             num_distancia_rota.TabIndex = 11;
@@ -224,6 +259,7 @@
             // 
             txt_destino_rota.BackColor = Color.White;
             txt_destino_rota.Location = new Point(94, 172);
+            txt_destino_rota.MaxLength = 150;
             txt_destino_rota.Name = "txt_destino_rota";
             txt_destino_rota.Size = new Size(222, 26);
             txt_destino_rota.TabIndex = 8;
@@ -242,6 +278,7 @@
             // 
             txt_origem_rota.BackColor = Color.White;
             txt_origem_rota.Location = new Point(94, 113);
+            txt_origem_rota.MaxLength = 100;
             txt_origem_rota.Name = "txt_origem_rota";
             txt_origem_rota.Size = new Size(222, 26);
             txt_origem_rota.TabIndex = 6;
@@ -279,21 +316,21 @@
             dgv_rotas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_rotas.Location = new Point(376, 6);
             dgv_rotas.Name = "dgv_rotas";
-            dgv_rotas.Size = new Size(416, 444);
+            dgv_rotas.Size = new Size(439, 463);
             dgv_rotas.TabIndex = 2;
             // 
             // tool_rotas
             // 
-            tool_rotas.BackColor = Color.WhiteSmoke;
+            tool_rotas.BackColor = Color.White;
             tool_rotas.Dock = DockStyle.Left;
+            tool_rotas.Font = new Font("Segoe UI Emoji", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tool_rotas.GripStyle = ToolStripGripStyle.Hidden;
             tool_rotas.ImageScalingSize = new Size(30, 30);
             tool_rotas.Items.AddRange(new ToolStripItem[] { tool_save_rotas, toolStripSeparator20, tool_editar_rotas, toolStripSeparator5, tool_pesquisar_rotas, toolStripSeparator1, tool_excluir_rotas, toolStripSeparator19, tool_vanish_rotas, toolStripSeparator21, tool_sair_rotas });
-            tool_rotas.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             tool_rotas.Location = new Point(3, 3);
             tool_rotas.Name = "tool_rotas";
             tool_rotas.RenderMode = ToolStripRenderMode.System;
-            tool_rotas.Size = new Size(35, 450);
+            tool_rotas.Size = new Size(35, 471);
             tool_rotas.Stretch = true;
             tool_rotas.TabIndex = 1;
             tool_rotas.Text = "toolStrip4";
@@ -330,7 +367,7 @@
             // 
             // tool_pesquisar_rotas
             // 
-            tool_pesquisar_rotas.BackColor = Color.WhiteSmoke;
+            tool_pesquisar_rotas.BackColor = Color.Transparent;
             tool_pesquisar_rotas.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tool_pesquisar_rotas.Image = (Image)resources.GetObject("tool_pesquisar_rotas.Image");
             tool_pesquisar_rotas.ImageTransparentColor = Color.White;
@@ -376,7 +413,7 @@
             // 
             // tool_sair_rotas
             // 
-            tool_sair_rotas.BackColor = Color.WhiteSmoke;
+            tool_sair_rotas.BackColor = Color.Transparent;
             tool_sair_rotas.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tool_sair_rotas.Image = (Image)resources.GetObject("tool_sair_rotas.Image");
             tool_sair_rotas.ImageTransparentColor = Color.White;
@@ -387,7 +424,10 @@
             // 
             // tab_veiculos
             // 
-            tab_veiculos.BackColor = Color.Gainsboro;
+            tab_veiculos.BackColor = Color.LightSteelBlue;
+            tab_veiculos.BorderStyle = BorderStyle.FixedSingle;
+            tab_veiculos.Controls.Add(lbl_situacao_veiculo);
+            tab_veiculos.Controls.Add(cb_situacao_veiculo);
             tab_veiculos.Controls.Add(num_cargamax_veiculo);
             tab_veiculos.Controls.Add(num_consumo_veiculo);
             tab_veiculos.Controls.Add(lbl_cargamax_veiculo);
@@ -400,12 +440,31 @@
             tab_veiculos.Controls.Add(lbl_id_veiculo);
             tab_veiculos.Controls.Add(dgv_veiculos);
             tab_veiculos.Controls.Add(tool_veiculos);
-            tab_veiculos.Location = new Point(4, 24);
+            tab_veiculos.Location = new Point(4, 31);
             tab_veiculos.Name = "tab_veiculos";
             tab_veiculos.Padding = new Padding(3);
-            tab_veiculos.Size = new Size(798, 460);
+            tab_veiculos.Size = new Size(823, 477);
             tab_veiculos.TabIndex = 1;
-            tab_veiculos.Text = "veículos";
+            tab_veiculos.Text = "Veículos";
+            // 
+            // lbl_situacao_veiculo
+            // 
+            lbl_situacao_veiculo.AutoSize = true;
+            lbl_situacao_veiculo.BackColor = Color.Transparent;
+            lbl_situacao_veiculo.Location = new Point(91, 326);
+            lbl_situacao_veiculo.Name = "lbl_situacao_veiculo";
+            lbl_situacao_veiculo.Size = new Size(61, 19);
+            lbl_situacao_veiculo.TabIndex = 42;
+            lbl_situacao_veiculo.Text = "Situação";
+            // 
+            // cb_situacao_veiculo
+            // 
+            cb_situacao_veiculo.FormattingEnabled = true;
+            cb_situacao_veiculo.Items.AddRange(new object[] { "Ativo", "Desativado", "Em manutenção" });
+            cb_situacao_veiculo.Location = new Point(91, 348);
+            cb_situacao_veiculo.Name = "cb_situacao_veiculo";
+            cb_situacao_veiculo.Size = new Size(222, 27);
+            cb_situacao_veiculo.TabIndex = 41;
             // 
             // num_cargamax_veiculo
             // 
@@ -466,6 +525,7 @@
             // 
             txt_modelo_veiculo.BackColor = Color.White;
             txt_modelo_veiculo.Location = new Point(91, 117);
+            txt_modelo_veiculo.MaxLength = 100;
             txt_modelo_veiculo.Name = "txt_modelo_veiculo";
             txt_modelo_veiculo.Size = new Size(222, 26);
             txt_modelo_veiculo.TabIndex = 15;
@@ -503,12 +563,12 @@
             dgv_veiculos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_veiculos.Location = new Point(376, 6);
             dgv_veiculos.Name = "dgv_veiculos";
-            dgv_veiculos.Size = new Size(416, 444);
+            dgv_veiculos.Size = new Size(439, 462);
             dgv_veiculos.TabIndex = 11;
             // 
             // tool_veiculos
             // 
-            tool_veiculos.BackColor = Color.WhiteSmoke;
+            tool_veiculos.BackColor = Color.White;
             tool_veiculos.Dock = DockStyle.Left;
             tool_veiculos.GripStyle = ToolStripGripStyle.Hidden;
             tool_veiculos.ImageScalingSize = new Size(30, 30);
@@ -517,7 +577,7 @@
             tool_veiculos.Location = new Point(3, 3);
             tool_veiculos.Name = "tool_veiculos";
             tool_veiculos.RenderMode = ToolStripRenderMode.System;
-            tool_veiculos.Size = new Size(35, 454);
+            tool_veiculos.Size = new Size(35, 469);
             tool_veiculos.Stretch = true;
             tool_veiculos.TabIndex = 1;
             tool_veiculos.Text = "toolStrip3";
@@ -613,7 +673,10 @@
             // 
             // tab_motoristas
             // 
-            tab_motoristas.BackColor = Color.Gainsboro;
+            tab_motoristas.BackColor = Color.LightSteelBlue;
+            tab_motoristas.BorderStyle = BorderStyle.FixedSingle;
+            tab_motoristas.Controls.Add(lbl_situacao_motorista);
+            tab_motoristas.Controls.Add(cb_situacao_motorista);
             tab_motoristas.Controls.Add(txt_telefone_motorista);
             tab_motoristas.Controls.Add(lbl_telefone_motorista);
             tab_motoristas.Controls.Add(txt_cnh_motorista);
@@ -624,17 +687,37 @@
             tab_motoristas.Controls.Add(lbl_id_motorista);
             tab_motoristas.Controls.Add(dgv_motorista);
             tab_motoristas.Controls.Add(tool_motoristas);
-            tab_motoristas.Location = new Point(4, 28);
+            tab_motoristas.Location = new Point(4, 31);
             tab_motoristas.Name = "tab_motoristas";
             tab_motoristas.Padding = new Padding(3);
-            tab_motoristas.Size = new Size(798, 456);
+            tab_motoristas.Size = new Size(823, 477);
             tab_motoristas.TabIndex = 2;
-            tab_motoristas.Text = "motoristas";
+            tab_motoristas.Text = "Motoristas";
+            // 
+            // lbl_situacao_motorista
+            // 
+            lbl_situacao_motorista.AutoSize = true;
+            lbl_situacao_motorista.BackColor = Color.Transparent;
+            lbl_situacao_motorista.Location = new Point(94, 261);
+            lbl_situacao_motorista.Name = "lbl_situacao_motorista";
+            lbl_situacao_motorista.Size = new Size(61, 19);
+            lbl_situacao_motorista.TabIndex = 40;
+            lbl_situacao_motorista.Text = "Situação";
+            // 
+            // cb_situacao_motorista
+            // 
+            cb_situacao_motorista.FormattingEnabled = true;
+            cb_situacao_motorista.Items.AddRange(new object[] { "Ativo", "Desativado" });
+            cb_situacao_motorista.Location = new Point(94, 283);
+            cb_situacao_motorista.Name = "cb_situacao_motorista";
+            cb_situacao_motorista.Size = new Size(222, 27);
+            cb_situacao_motorista.TabIndex = 39;
             // 
             // txt_telefone_motorista
             // 
             txt_telefone_motorista.BackColor = Color.White;
             txt_telefone_motorista.Location = new Point(94, 229);
+            txt_telefone_motorista.MaxLength = 11;
             txt_telefone_motorista.Name = "txt_telefone_motorista";
             txt_telefone_motorista.Size = new Size(222, 26);
             txt_telefone_motorista.TabIndex = 19;
@@ -653,6 +736,7 @@
             // 
             txt_cnh_motorista.BackColor = Color.White;
             txt_cnh_motorista.Location = new Point(94, 172);
+            txt_cnh_motorista.MaxLength = 11;
             txt_cnh_motorista.Name = "txt_cnh_motorista";
             txt_cnh_motorista.Size = new Size(222, 26);
             txt_cnh_motorista.TabIndex = 17;
@@ -671,6 +755,7 @@
             // 
             txt_nome_motorista.BackColor = Color.White;
             txt_nome_motorista.Location = new Point(94, 113);
+            txt_nome_motorista.MaxLength = 100;
             txt_nome_motorista.Name = "txt_nome_motorista";
             txt_nome_motorista.Size = new Size(222, 26);
             txt_nome_motorista.TabIndex = 15;
@@ -696,7 +781,7 @@
             // lbl_id_motorista
             // 
             lbl_id_motorista.AutoSize = true;
-            lbl_id_motorista.BackColor = Color.Gainsboro;
+            lbl_id_motorista.BackColor = Color.Transparent;
             lbl_id_motorista.Location = new Point(94, 33);
             lbl_id_motorista.Name = "lbl_id_motorista";
             lbl_id_motorista.Size = new Size(91, 19);
@@ -708,12 +793,12 @@
             dgv_motorista.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_motorista.Location = new Point(376, 6);
             dgv_motorista.Name = "dgv_motorista";
-            dgv_motorista.Size = new Size(416, 444);
+            dgv_motorista.Size = new Size(439, 462);
             dgv_motorista.TabIndex = 11;
             // 
             // tool_motoristas
             // 
-            tool_motoristas.BackColor = Color.WhiteSmoke;
+            tool_motoristas.BackColor = Color.White;
             tool_motoristas.Dock = DockStyle.Left;
             tool_motoristas.GripStyle = ToolStripGripStyle.Hidden;
             tool_motoristas.ImageScalingSize = new Size(30, 30);
@@ -722,7 +807,7 @@
             tool_motoristas.Location = new Point(3, 3);
             tool_motoristas.Name = "tool_motoristas";
             tool_motoristas.RenderMode = ToolStripRenderMode.System;
-            tool_motoristas.Size = new Size(35, 450);
+            tool_motoristas.Size = new Size(35, 469);
             tool_motoristas.Stretch = true;
             tool_motoristas.TabIndex = 1;
             tool_motoristas.Text = "toolStrip2";
@@ -815,7 +900,8 @@
             // 
             // tab_combustivel
             // 
-            tab_combustivel.BackColor = Color.Gainsboro;
+            tab_combustivel.BackColor = Color.LightSteelBlue;
+            tab_combustivel.BorderStyle = BorderStyle.FixedSingle;
             tab_combustivel.Controls.Add(num_preco_combustivel);
             tab_combustivel.Controls.Add(cb_tipo_combustivel);
             tab_combustivel.Controls.Add(dtp_consulta_combustivel);
@@ -826,12 +912,12 @@
             tab_combustivel.Controls.Add(label17);
             tab_combustivel.Controls.Add(dgv_combustivel);
             tab_combustivel.Controls.Add(tool_combustivel);
-            tab_combustivel.Location = new Point(4, 24);
+            tab_combustivel.Location = new Point(4, 31);
             tab_combustivel.Name = "tab_combustivel";
             tab_combustivel.Padding = new Padding(3);
-            tab_combustivel.Size = new Size(798, 460);
+            tab_combustivel.Size = new Size(823, 477);
             tab_combustivel.TabIndex = 3;
-            tab_combustivel.Text = "combustível";
+            tab_combustivel.Text = "Combustível";
             // 
             // num_preco_combustivel
             // 
@@ -914,12 +1000,12 @@
             dgv_combustivel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_combustivel.Location = new Point(376, 6);
             dgv_combustivel.Name = "dgv_combustivel";
-            dgv_combustivel.Size = new Size(416, 444);
+            dgv_combustivel.Size = new Size(438, 462);
             dgv_combustivel.TabIndex = 11;
             // 
             // tool_combustivel
             // 
-            tool_combustivel.BackColor = Color.WhiteSmoke;
+            tool_combustivel.BackColor = Color.White;
             tool_combustivel.Dock = DockStyle.Left;
             tool_combustivel.GripStyle = ToolStripGripStyle.Hidden;
             tool_combustivel.ImageScalingSize = new Size(30, 30);
@@ -927,7 +1013,7 @@
             tool_combustivel.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             tool_combustivel.Location = new Point(3, 3);
             tool_combustivel.Name = "tool_combustivel";
-            tool_combustivel.Size = new Size(35, 454);
+            tool_combustivel.Size = new Size(35, 469);
             tool_combustivel.Stretch = true;
             tool_combustivel.TabIndex = 1;
             tool_combustivel.Text = "tool_combustivel";
@@ -1024,7 +1110,8 @@
             // 
             // tab_viagem
             // 
-            tab_viagem.BackColor = Color.Gainsboro;
+            tab_viagem.BackColor = Color.LightSteelBlue;
+            tab_viagem.BorderStyle = BorderStyle.FixedSingle;
             tab_viagem.Controls.Add(label1);
             tab_viagem.Controls.Add(cb_situacao_viagem);
             tab_viagem.Controls.Add(dtp_chegada_viagem);
@@ -1041,12 +1128,13 @@
             tab_viagem.Controls.Add(lbl_id_viagem);
             tab_viagem.Controls.Add(dgv_viagem);
             tab_viagem.Controls.Add(tool_viagem);
-            tab_viagem.Location = new Point(4, 24);
+            tab_viagem.ImageKey = "(nenhum)";
+            tab_viagem.Location = new Point(4, 31);
             tab_viagem.Name = "tab_viagem";
             tab_viagem.Padding = new Padding(3);
-            tab_viagem.Size = new Size(798, 460);
+            tab_viagem.Size = new Size(823, 477);
             tab_viagem.TabIndex = 4;
-            tab_viagem.Text = "viagens";
+            tab_viagem.Text = "Viagens";
             // 
             // label1
             // 
@@ -1182,13 +1270,13 @@
             dgv_viagem.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_viagem.Location = new Point(376, 6);
             dgv_viagem.Name = "dgv_viagem";
-            dgv_viagem.Size = new Size(416, 444);
+            dgv_viagem.Size = new Size(438, 462);
             dgv_viagem.TabIndex = 22;
             // 
             // tool_viagem
             // 
             tool_viagem.AllowMerge = false;
-            tool_viagem.BackColor = Color.WhiteSmoke;
+            tool_viagem.BackColor = Color.White;
             tool_viagem.BackgroundImageLayout = ImageLayout.None;
             tool_viagem.Dock = DockStyle.Left;
             tool_viagem.GripStyle = ToolStripGripStyle.Hidden;
@@ -1197,7 +1285,7 @@
             tool_viagem.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             tool_viagem.Location = new Point(3, 3);
             tool_viagem.Name = "tool_viagem";
-            tool_viagem.Size = new Size(35, 454);
+            tool_viagem.Size = new Size(35, 469);
             tool_viagem.Stretch = true;
             tool_viagem.TabIndex = 0;
             tool_viagem.Text = "tool_crudtools";
@@ -1292,14 +1380,19 @@
             tool_exit_viagens.Text = "tool_exiticon";
             tool_exit_viagens.Click += tool_exiticon_viagens_Click;
             // 
+            // operacoesRotaBindingSource
+            // 
+            operacoesRotaBindingSource.DataSource = typeof(OperacoesRota);
+            // 
             // sglform
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
+            BackColor = Color.LightSteelBlue;
             ClientSize = new Size(831, 512);
             Controls.Add(tabcontrol);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
@@ -1337,6 +1430,7 @@
             ((System.ComponentModel.ISupportInitialize)dgv_viagem).EndInit();
             tool_viagem.ResumeLayout(false);
             tool_viagem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)operacoesRotaBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -1462,5 +1556,12 @@
         private NumericUpDown num_consumo_veiculo;
         private ToolStripButton tool_vanish_veiculo;
         private ToolStripSeparator toolStripSeparator25;
+        private Label lbl_situacao_veiculo;
+        private ComboBox cb_situacao_veiculo;
+        private Label lbl_situacao_motorista;
+        private ComboBox cb_situacao_motorista;
+        private Label lbl_situacao_rota;
+        private ComboBox cb_situacao_rota;
+        private BindingSource operacoesRotaBindingSource;
     }
 }

@@ -22,6 +22,8 @@ namespace sgl
 
         //incrementar visual do programa incluindo tela de inicio e possivel altera;'ao de cores!
 
+        //adicionar resultado de salvamento e edição com resultado no dgv?
+
 
         // infelixmente notamos que o sql não permite a exlusão de dados referenciados de tabelas relacionadas.
         // mesmo que a exclusão seja adaptada no codigo, dessa forma, futuramente encontraremos inconsistencias
@@ -42,7 +44,7 @@ namespace sgl
         {
 
             //chamamos o metodo de verificação de campos vazios
-            if (ValidarCampos.CamposEstaoVazios(txt_origem_rota, txt_destino_rota))
+            if (ValidarCampos.ControlesVazios(txt_origem_rota, txt_destino_rota, cb_situacao_rota))
             {
                 return;
             }
@@ -64,10 +66,10 @@ namespace sgl
             }
 
 
-            if (OperacoesRota.SalvarRota(txt_origem_rota.Text, txt_destino_rota.Text, distancia))
+            if (OperacoesRota.SalvarRota(txt_origem_rota.Text, txt_destino_rota.Text, distancia, cb_situacao_rota.Text))
             {
                 // Só limpa se salvou com SUCESSO
-                Limpar.LimparCampos(txt_origem_rota, txt_destino_rota, num_distancia_rota);
+                Limpar.LimparCampos(txt_origem_rota, txt_destino_rota, num_distancia_rota, cb_situacao_rota);
 
                 MessageBox.Show("Salvo com sucesso!");
             }
@@ -82,7 +84,7 @@ namespace sgl
 
         private void tool_editar_rotas_Click(object sender, EventArgs e)
         {
-            if (ValidarCampos.CamposEstaoVazios(txt_origem_rota, txt_destino_rota))
+            if (ValidarCampos.ControlesVazios(txt_origem_rota, txt_destino_rota, cb_situacao_rota))
             {
                 return;
             }
@@ -101,10 +103,10 @@ namespace sgl
                 return;
             }
 
-            if (OperacoesRota.EditarRota(txt_id_rota.Text, txt_origem_rota.Text, txt_destino_rota.Text, distancia))
+            if (OperacoesRota.EditarRota(txt_id_rota.Text, txt_origem_rota.Text, txt_destino_rota.Text, distancia, cb_situacao_rota.Text))
             {
                 // Só limpa se editou com SUCESSO
-                Limpar.LimparCampos(txt_id_rota, txt_origem_rota, txt_destino_rota, num_distancia_rota);
+                Limpar.LimparCampos(txt_id_rota, txt_origem_rota, txt_destino_rota, num_distancia_rota, cb_situacao_rota);
                 MessageBox.Show("Editado com sucesso!");
             }
             else
@@ -140,20 +142,21 @@ namespace sgl
             if (!ValidarCampos.ValidacaoSemAviso(txt_id_rota))
             {
 
-                OperacoesRota.ConsultarRota(txt_id_rota, txt_origem_rota, txt_destino_rota, num_distancia_rota);
+                OperacoesRota.ConsultarRota(txt_id_rota, txt_origem_rota, txt_destino_rota, num_distancia_rota, cb_situacao_rota);
                 return;
 
 
 
 
             }
-            if (txt_origem_rota.Text != "" || txt_destino_rota.Text != "" || num_distancia_rota.Value > 0)
+            if (txt_origem_rota.Text != "" || txt_destino_rota.Text != "" || num_distancia_rota.Value > 0 || cb_situacao_rota.SelectedIndex != -1)
             {
                 OperacoesRota.ConsultarRotasLike(
                     dgv_rotas,
                     txt_origem_rota,
                     txt_destino_rota,
-                    num_distancia_rota);
+                    num_distancia_rota,
+                    cb_situacao_rota);
                 return;
             }
             else
@@ -189,7 +192,7 @@ namespace sgl
 
         private void tool_vanish_rotas_Click(object sender, EventArgs e)
         {
-            Limpar.LimparCampos(txt_id_rota, txt_origem_rota, txt_destino_rota, num_distancia_rota);
+            Limpar.LimparCampos(txt_id_rota, txt_origem_rota, txt_destino_rota, num_distancia_rota, cb_situacao_rota);
 
             MessageBox.Show("Campos limpos com sucesso!");
         }
@@ -551,7 +554,7 @@ namespace sgl
         private void tool_save_veiculos_Click(object sender, EventArgs e)
         {
             //chamamos o metodo de verificação de campos vazios
-            if (ValidarCampos.ControlesVazios(txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo))
+            if (ValidarCampos.ControlesVazios(txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo, cb_situacao_veiculo))
             {
                 return;
             }
@@ -563,10 +566,10 @@ namespace sgl
 
             //como usamos numeric, atribuimos a uma variavel decimal, para armazenar a distancia
 
-            if (OperacoesVeiculo.SalvarVeiculo(txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo))
+            if (OperacoesVeiculo.SalvarVeiculo(txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo, cb_situacao_veiculo))
             {
                 // Só limpa se salvou com SUCESSO
-                Limpar.LimparCampos(txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo);
+                Limpar.LimparCampos(txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo, cb_situacao_veiculo);
 
                 MessageBox.Show("Salvo com sucesso!");
             }
@@ -582,21 +585,21 @@ namespace sgl
         private void tool_editar_veiculos_Click(object sender, EventArgs e)
         {
 
-            if (ValidarCampos.CampoIDNecessario(txt_id_viagem))
+            if (ValidarCampos.CampoIDNecessario(txt_id_veiculo))
             {
                 return;
             }
 
-            if (ValidarCampos.ControlesVazios(txt_id_veiculo, txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo))
+            if (ValidarCampos.ControlesVazios(txt_id_veiculo, txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo, cb_situacao_veiculo))
             {
                 return;
             }
 
 
-            if (OperacoesVeiculo.EditarVeiculo(txt_id_veiculo, txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo))
+            if (OperacoesVeiculo.EditarVeiculo(txt_id_veiculo, txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo, cb_situacao_veiculo))
             {
                 // Só limpa se editou com SUCESSO
-                Limpar.LimparCampos(txt_id_veiculo, txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo);
+                Limpar.LimparCampos(txt_id_veiculo, txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo, cb_situacao_veiculo);
                 MessageBox.Show("Editado com sucesso!");
             }
             else
@@ -613,11 +616,11 @@ namespace sgl
             if (!ValidarCampos.ValidacaoSemAviso(txt_id_veiculo))
             {
 
-                OperacoesVeiculo.ConsultarVeiculo(txt_id_veiculo, txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo);
+                OperacoesVeiculo.ConsultarVeiculo(txt_id_veiculo, txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo, cb_situacao_veiculo);
                 return;
 
             }
-            if (txt_modelo_veiculo.Text != "" || txt_placa_veiculo.Text != "" || num_consumo_veiculo.Value > 0 || num_cargamax_veiculo.Value > 0)
+            if (txt_modelo_veiculo.Text != "" || txt_placa_veiculo.Text != "" || num_consumo_veiculo.Value > 0 || num_cargamax_veiculo.Value > 0 || cb_situacao_veiculo.SelectedIndex != -1)
             {
                 OperacoesVeiculo.ConsultarVeiculoLike
                     (
@@ -625,7 +628,8 @@ namespace sgl
                     txt_modelo_veiculo,
                     txt_placa_veiculo,
                     num_consumo_veiculo,
-                    num_cargamax_veiculo
+                    num_cargamax_veiculo,
+                    cb_situacao_veiculo
                     );
                 return;
             }
@@ -651,7 +655,7 @@ namespace sgl
             if (resultado == DialogResult.Yes)
             {
                 OperacoesVeiculo.ExcluirVeiculo(txt_id_veiculo);
-                Limpar.LimparCampos(txt_id_veiculo, txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo);
+                Limpar.LimparCampos(txt_id_veiculo, txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo, cb_situacao_veiculo);
                 MessageBox.Show("Excluido com sucesso!");
 
                 return;
@@ -669,7 +673,8 @@ namespace sgl
             txt_modelo_veiculo,
             txt_placa_veiculo,
             num_consumo_veiculo,
-            num_cargamax_veiculo
+            num_cargamax_veiculo,
+            cb_situacao_veiculo
             );
 
 
@@ -703,7 +708,8 @@ namespace sgl
                 (
                 txt_nome_motorista,
                 txt_cnh_motorista,
-                txt_telefone_motorista
+                txt_telefone_motorista,
+                cb_situacao_motorista
                 ))
             {
                 return;
@@ -713,7 +719,8 @@ namespace sgl
                 (
                 txt_nome_motorista,
                 txt_cnh_motorista,
-                txt_telefone_motorista
+                txt_telefone_motorista,
+                cb_situacao_motorista
                 ))
             {
                 // Só limpa se salvou com SUCESSO
@@ -721,7 +728,8 @@ namespace sgl
                 (
                 txt_nome_motorista,
                 txt_cnh_motorista,
-                txt_telefone_motorista
+                txt_telefone_motorista,
+                cb_situacao_motorista
                 );
 
                 MessageBox.Show("Salvo com sucesso!");
@@ -741,11 +749,12 @@ namespace sgl
             {
                 return;
             }
-            if (ValidarCampos.CamposEstaoVazios
+            if (ValidarCampos.ControlesVazios
                 (
                 txt_nome_motorista,
                 txt_cnh_motorista,
-                txt_telefone_motorista
+                txt_telefone_motorista,
+                cb_situacao_motorista
                 ))
             {
                 return;
@@ -756,7 +765,8 @@ namespace sgl
                 txt_id_motorista,
                 txt_nome_motorista,
                 txt_cnh_motorista,
-                txt_telefone_motorista
+                txt_telefone_motorista,
+                cb_situacao_motorista
                 ))
             {
                 // Só limpa se editou com SUCESSO
@@ -765,7 +775,8 @@ namespace sgl
                 txt_id_motorista,
                 txt_nome_motorista,
                 txt_cnh_motorista,
-                txt_telefone_motorista
+                txt_telefone_motorista,
+                cb_situacao_motorista
                 );
 
                 MessageBox.Show("Editado com sucesso!");
@@ -789,7 +800,8 @@ namespace sgl
                 txt_id_motorista,
                 txt_nome_motorista,
                 txt_cnh_motorista,
-                txt_telefone_motorista
+                txt_telefone_motorista,
+                cb_situacao_motorista
                 );
                 return;
 
@@ -804,7 +816,8 @@ namespace sgl
                     txt_id_motorista,
                     txt_nome_motorista,
                     txt_cnh_motorista,
-                    txt_telefone_motorista
+                    txt_telefone_motorista,
+                    cb_situacao_motorista
                     );
                 return;
             }
@@ -844,7 +857,8 @@ namespace sgl
             txt_id_motorista,
             txt_nome_motorista,
             txt_cnh_motorista,
-            txt_telefone_motorista
+            txt_telefone_motorista,
+            cb_situacao_motorista
             );
 
             MessageBox.Show("Campos limpos com sucesso!");
@@ -873,7 +887,8 @@ namespace sgl
             (
             string origem,
             string destino,
-            decimal distancia
+            decimal distancia,
+            string situacao
             )
 
 
@@ -894,11 +909,13 @@ namespace sgl
                 {
                     conexao.Open();
 
-                    sql = "INSERT INTO rota (origem, destino, distancia) VALUES(@ORIGEM, @DESTINO, @DISTANCIA)";
+                    sql = "INSERT INTO rota (origem, destino, distancia, situacao) VALUES(@ORIGEM, @DESTINO, @DISTANCIA, @SITUACAO)";
                     comando = new MySqlCommand(sql, conexao);
                     comando.Parameters.AddWithValue("@ORIGEM", origem);
                     comando.Parameters.AddWithValue("@DESTINO", destino);
                     comando.Parameters.AddWithValue("@DISTANCIA", distancia);
+                    comando.Parameters.AddWithValue("@SITUACAO", situacao);
+
                     comando.ExecuteNonQuery();
                 }
 
@@ -920,7 +937,8 @@ namespace sgl
              string id,
              string origem,
              string destino,
-             decimal distancia
+             decimal distancia,
+             string situacao
              )
         {
 
@@ -944,7 +962,7 @@ namespace sgl
 
 
                     sql = "UPDATE rota" +
-                        " SET origem = @ORIGEM, destino = @DESTINO, distancia = @DISTANCIA " +
+                        " SET origem = @ORIGEM, destino = @DESTINO, distancia = @DISTANCIA, situacao = @SITUACAO " +
                         "WHERE rotaID = @ID";
 
 
@@ -953,6 +971,8 @@ namespace sgl
                     comando.Parameters.AddWithValue("@ORIGEM", origem);
                     comando.Parameters.AddWithValue("@DESTINO", destino);
                     comando.Parameters.AddWithValue("@DISTANCIA", distancia);
+                    comando.Parameters.AddWithValue("@SITUACAO", situacao);
+
 
                     comando.ExecuteNonQuery();
 
@@ -987,7 +1007,8 @@ namespace sgl
             TextBox txt_id_rota,
             TextBox txt_origem_rota,
             TextBox txt_destino_rota,
-            NumericUpDown num_distancia_rota
+            NumericUpDown num_distancia_rota,
+            ComboBox cb_situacao_rota
             )
         {
             MySqlConnection conexao;
@@ -1014,6 +1035,7 @@ namespace sgl
                         txt_origem_rota.Text = dr["origem"].ToString();
                         txt_destino_rota.Text = dr["destino"].ToString();
                         num_distancia_rota.Value = Convert.ToDecimal(dr["distancia"]);
+                        cb_situacao_rota.Text = dr["situacao"].ToString();
                         return true; // Rota encontrada e campos preenchidos
                     }
                     else
@@ -1092,7 +1114,8 @@ namespace sgl
             DataGridView dgv_rotas,
             TextBox txt_origem_rota,
             TextBox txt_destino_rota,
-            NumericUpDown num_distancia_rotas
+            NumericUpDown num_distancia_rotas,
+            ComboBox cb_situacao_rota
             )
         {
             MySqlConnection conexao;
@@ -1129,6 +1152,13 @@ namespace sgl
                         sql += " AND distancia >= @DISTANCIA";
                         comando.Parameters.AddWithValue("@DISTANCIA", num_distancia_rotas.Value);
                     }
+
+                    if (cb_situacao_rota.SelectedIndex != -1)
+                    {
+                        sql += " AND situacao = @SITUACAO";
+                        comando.Parameters.AddWithValue("@SITUACAO", cb_situacao_rota.Text);
+                    }
+
 
                     // ATUALIZAR o comando com SQL final
                     comando.CommandText = sql;
@@ -1942,7 +1972,8 @@ namespace sgl
         TextBox txt_modelo_veiculo,
         TextBox txt_placa_veiculo,
         NumericUpDown num_consumo_veiculo,
-        NumericUpDown num_cargamax_veiculo
+        NumericUpDown num_cargamax_veiculo,
+        ComboBox cb_situacao_veiculo
         )
 
 
@@ -1963,12 +1994,13 @@ namespace sgl
                 {
                     conexao.Open();
 
-                    sql = "INSERT INTO veiculo (modelo, placa, consumo_medio, carga_maxima) VALUES(@MODELO, @PLACA, @CONSUMO_MEDIO, @CARGA_MAXIMA)";
+                    sql = "INSERT INTO veiculo (modelo, placa, consumo_medio, carga_maxima, situacao) VALUES(@MODELO, @PLACA, @CONSUMO_MEDIO, @CARGA_MAXIMA, @SITUACAO)";
                     comando = new MySqlCommand(sql, conexao);
                     comando.Parameters.AddWithValue("@MODELO", txt_modelo_veiculo.Text);
                     comando.Parameters.AddWithValue("@PLACA", txt_placa_veiculo.Text);
                     comando.Parameters.AddWithValue("@CONSUMO_MEDIO", num_consumo_veiculo.Value);
                     comando.Parameters.AddWithValue("@CARGA_MAXIMA", num_cargamax_veiculo.Value);
+                    comando.Parameters.AddWithValue("@SITUACAO", cb_situacao_veiculo.Text);
                     comando.ExecuteNonQuery();
                 }
 
@@ -1991,7 +2023,8 @@ namespace sgl
             TextBox txt_modelo_veiculo,
             TextBox txt_placa_veiculo,
             NumericUpDown num_consumo_veiculo,
-            NumericUpDown num_cargamax_veiculo
+            NumericUpDown num_cargamax_veiculo,
+            ComboBox cb_situacao_veiculo
             )
         {
 
@@ -2015,8 +2048,9 @@ namespace sgl
 
 
                     sql = "UPDATE veiculo" +
-                        " SET modelo = @MODELO, placa = @PLACA, consumo_medio = @CONSUMO_MEDIO, carga_maxima = @CARGA_MAXIMA " +
-                        "WHERE veiculoID = @ID";
+                        " SET modelo = @MODELO, placa = @PLACA, consumo_medio = @CONSUMO_MEDIO, carga_maxima = @CARGA_MAXIMA," +
+                        " situacao = @SITUACAO " +
+                        " WHERE veiculoID = @ID";
 
 
                     comando = new MySqlCommand(sql, conexao);
@@ -2025,6 +2059,7 @@ namespace sgl
                     comando.Parameters.AddWithValue("@PLACA", txt_placa_veiculo.Text);
                     comando.Parameters.AddWithValue("@CONSUMO_MEDIO", num_consumo_veiculo.Value);
                     comando.Parameters.AddWithValue("@CARGA_MAXIMA", num_cargamax_veiculo.Value);
+                    comando.Parameters.AddWithValue("@SITUACAO", cb_situacao_veiculo.Text);
 
                     comando.ExecuteNonQuery();
 
@@ -2060,7 +2095,8 @@ namespace sgl
             TextBox txt_modelo_veiculo,
             TextBox txt_placa_veiculo,
             NumericUpDown num_consumo_veiculo,
-            NumericUpDown num_cargamax_veiculo
+            NumericUpDown num_cargamax_veiculo,
+            ComboBox cb_situacao_veiculo
             )
         {
             MySqlConnection conexao;
@@ -2088,6 +2124,8 @@ namespace sgl
                         txt_placa_veiculo.Text = dr["placa"].ToString();
                         num_consumo_veiculo.Value = Convert.ToDecimal(dr["consumo_medio"]);
                         num_cargamax_veiculo.Value = Convert.ToDecimal(dr["carga_maxima"]);
+                        cb_situacao_veiculo.Text = dr["situacao"].ToString();
+
                         return true; // Rota encontrada e campos preenchidos
                     }
                     else
@@ -2116,7 +2154,8 @@ namespace sgl
             TextBox txt_modelo_veiculo,
             TextBox txt_placa_veiculo,
             NumericUpDown num_consumo_veiculo,
-            NumericUpDown num_cargamax_veiculo
+            NumericUpDown num_cargamax_veiculo,
+            ComboBox cb_situacao_veiculo
             )
         {
             MySqlConnection conexao;
@@ -2159,6 +2198,12 @@ namespace sgl
                         sql += " AND carga_maxima LIKE @CARGA_MAXIMA";
                         comando.Parameters.AddWithValue("@CARGA_MAXIMA", $"%{num_cargamax_veiculo.Value}%");
                     }
+                    if (cb_situacao_veiculo.SelectedIndex != -1)
+                    {
+                        sql += " AND situacao = @SITUACAO";
+                        comando.Parameters.AddWithValue("@SITUACAO", cb_situacao_veiculo.Text);
+                    }
+
 
 
 
@@ -2299,7 +2344,8 @@ namespace sgl
         (
             TextBox txt_nome_motorista,
             TextBox txt_cnh_motorista,
-            TextBox txt_telefone_motorista
+            TextBox txt_telefone_motorista,
+            ComboBox cb_situacao_motorista
         )
 
 
@@ -2320,11 +2366,13 @@ namespace sgl
                 {
                     conexao.Open();
 
-                    sql = "INSERT INTO motorista (nome, cnh, telefone) VALUES(@NOME, @CNH, @TELEFONE)";
+                    sql = "INSERT INTO motorista (nome, cnh, telefone, situacao) VALUES(@NOME, @CNH, @TELEFONE, @SITUACAO)";
                     comando = new MySqlCommand(sql, conexao);
                     comando.Parameters.AddWithValue("@NOME", txt_nome_motorista.Text);
                     comando.Parameters.AddWithValue("@CNH", txt_cnh_motorista.Text);
                     comando.Parameters.AddWithValue("@TELEFONE", txt_telefone_motorista.Text);
+                    comando.Parameters.AddWithValue("@SITUACAO", cb_situacao_motorista.Text);
+
                     comando.ExecuteNonQuery();
                 }
 
@@ -2346,8 +2394,8 @@ namespace sgl
             TextBox txt_id_motorista,
             TextBox txt_nome_motorista,
             TextBox txt_cnh_motorista,
-            TextBox txt_telefone_motorista
-
+            TextBox txt_telefone_motorista,
+            ComboBox cb_situacao_motorista
         )
         {
 
@@ -2366,7 +2414,7 @@ namespace sgl
 
 
                     sql = "UPDATE motorista" +
-                        " SET nome = @NOME, cnh = @CNH, telefone = @TELEFONE" +
+                        " SET nome = @NOME, cnh = @CNH, telefone = @TELEFONE, situacao = @SITUACAO" +
                         " WHERE motoristaID = @ID";
 
 
@@ -2375,6 +2423,7 @@ namespace sgl
                     comando.Parameters.AddWithValue("@NOME", txt_nome_motorista.Text);
                     comando.Parameters.AddWithValue("@CNH", txt_cnh_motorista.Text);
                     comando.Parameters.AddWithValue("@TELEFONE", txt_telefone_motorista.Text);
+                    comando.Parameters.AddWithValue("@SITUACAO", cb_situacao_motorista.Text);
 
                     comando.ExecuteNonQuery();
 
@@ -2409,7 +2458,9 @@ namespace sgl
             TextBox txt_id_motorista,
             TextBox txt_nome_motorista,
             TextBox txt_cnh_motorista,
-            TextBox txt_telefone_motorista
+            TextBox txt_telefone_motorista,
+            ComboBox cb_situacao_motorista
+
             )
         {
             MySqlConnection conexao;
@@ -2436,6 +2487,7 @@ namespace sgl
                         txt_nome_motorista.Text = dr["nome"].ToString();
                         txt_cnh_motorista.Text = dr["cnh"].ToString();
                         txt_telefone_motorista.Text = dr["telefone"].ToString();
+                        cb_situacao_motorista.Text = dr["situacao"].ToString();
                         return true; // Rota encontrada e campos preenchidos
                     }
                     else
@@ -2464,13 +2516,13 @@ namespace sgl
             TextBox txt_id_motorista,
             TextBox txt_nome_motorista,
             TextBox txt_cnh_motorista,
-            TextBox txt_telefone_motorista
+            TextBox txt_telefone_motorista,
+            ComboBox cb_situacao_motorista
         )
         {
             MySqlConnection conexao;
             MySqlCommand comando;
             MySqlDataAdapter da;
-            MySqlDataReader dr;
             string sql;
 
             try
@@ -2500,6 +2552,12 @@ namespace sgl
                     {
                         sql += " AND telefone LIKE @TELEFONE";
                         comando.Parameters.AddWithValue("@TELEFONE", $"%{txt_telefone_motorista.Text}%");
+                    }
+
+                    if (cb_situacao_motorista.SelectedIndex != -1)
+                    {
+                        sql += " AND situacao = @SITUACAO";
+                        comando.Parameters.AddWithValue("@SITUACAO", cb_situacao_motorista.Text);
                     }
 
 
