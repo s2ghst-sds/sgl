@@ -123,7 +123,9 @@ namespace sgl
 
         private void tool_sair_rotas_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            LandingPage LandingPage = new LandingPage();
+            LandingPage.Show();
             //no momento não existe tela de login para retornar ou "fechar" o sistema para validar outros usuarios.
         }
 
@@ -138,6 +140,8 @@ namespace sgl
             caso id não seja preenchido, e os campos sim, recebe os dados dos campos para fazer a consulta no sql.
 
             caso nenhums destes if's sejam acionados, faz a busca por completo. */
+
+            MessageBox.Show("A pesquisa pode ser feita por ID (preenchendo o campo ID), ou por filtros (preenchendo qualquer outro campo, exceto o ID). Caso nenhum campo seja preenchido, todas as rotas serão exibidas.");
 
             if (!ValidarCampos.ValidacaoSemAviso(txt_id_rota))
             {
@@ -181,6 +185,7 @@ namespace sgl
             if (resultado == DialogResult.Yes)
             {
                 OperacoesRota.ExcluirRota(txt_id_rota.Text);
+                Limpar.LimparCampos(txt_id_rota, txt_origem_rota, txt_destino_rota, num_distancia_rota, cb_situacao_rota);
                 return;
             }
 
@@ -208,7 +213,9 @@ namespace sgl
 
         private void tool_sair_combustivel_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            LandingPage LandingPage = new LandingPage();
+            LandingPage.Show();
             //still dont have the login form.
         }
 
@@ -272,6 +279,9 @@ namespace sgl
 
         private void tool_pesquisar_combustivel_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("A pesquisa pode ser feita por ID (preenchendo o campo ID), ou por filtros (preenchendo qualquer outro campo, exceto o ID). Caso nenhum campo seja preenchido, todas as rotas serão exibidas.");
+
+
             if (!ValidarCampos.ValidacaoSemAviso(txt_id_combustivel))
             {
 
@@ -315,6 +325,8 @@ namespace sgl
             if (resultado == DialogResult.Yes)
             {
                 OperacoesCombustivel.ExcluirCombustivel(txt_id_combustivel);
+                Limpar.LimparCampos(txt_id_combustivel, cb_tipo_combustivel, num_preco_combustivel, dtp_consulta_combustivel);
+
                 return;
             }
 
@@ -341,7 +353,9 @@ namespace sgl
 
         private void tool_exiticon_viagens_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            LandingPage LandingPage = new LandingPage();
+            LandingPage.Show();
         }
 
         private void tool_salvar_viagens_Click(object sender, EventArgs e)
@@ -456,6 +470,9 @@ namespace sgl
 
         private void tool_search_viagens_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("A pesquisa pode ser feita por ID (preenchendo o campo ID), ou por filtros (preenchendo qualquer outro campo, exceto o ID). Caso nenhum campo seja preenchido, todas as rotas serão exibidas.");
+
+
             if (!ValidarCampos.ValidacaoSemAviso(txt_id_viagem))
             {
                 OperacoesViagem.ConsultarViagem
@@ -513,6 +530,17 @@ namespace sgl
             if (resultado == DialogResult.Yes)
             {
                 OperacoesViagem.ExcluirViagem(txt_id_viagem.Text);
+                Limpar.LimparCampos
+                (
+                txt_id_viagem,
+                txt_veiculo_viagem,
+                txt_motorista_viagem,
+                txt_rota_viagem,
+                dtp_saida_viagem,
+                dtp_chegada_viagem,
+                cb_situacao_viagem
+                );
+
                 return;
             }
 
@@ -548,7 +576,9 @@ namespace sgl
 
         private void tool_sair_veiculos_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            LandingPage LandingPage = new LandingPage();
+            LandingPage.Show();
         }
 
         private void tool_save_veiculos_Click(object sender, EventArgs e)
@@ -613,6 +643,9 @@ namespace sgl
 
         private void tool_pesquisar_veiculos_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("A pesquisa pode ser feita por ID (preenchendo o campo ID), ou por filtros (preenchendo qualquer outro campo, exceto o ID). Caso nenhum campo seja preenchido, todas as rotas serão exibidas.");
+
+
             if (!ValidarCampos.ValidacaoSemAviso(txt_id_veiculo))
             {
 
@@ -656,8 +689,6 @@ namespace sgl
             {
                 OperacoesVeiculo.ExcluirVeiculo(txt_id_veiculo);
                 Limpar.LimparCampos(txt_id_veiculo, txt_modelo_veiculo, txt_placa_veiculo, num_consumo_veiculo, num_cargamax_veiculo, cb_situacao_veiculo);
-                MessageBox.Show("Excluido com sucesso!");
-
                 return;
             }
 
@@ -667,6 +698,7 @@ namespace sgl
 
         private void tool_vanish_veiculo_Click(object sender, EventArgs e)
         {
+
             Limpar.LimparCampos
             (
             txt_id_veiculo,
@@ -693,7 +725,9 @@ namespace sgl
 
         private void tool_sair_motoristas_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            LandingPage LandingPage = new LandingPage();
+            LandingPage.Show();
         }
 
         private void tool_salvar_motoristas_Click(object sender, EventArgs e)
@@ -792,6 +826,9 @@ namespace sgl
 
         private void tool_pesquisar_motoristas_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("A pesquisa pode ser feita por ID (preenchendo o campo ID), ou por filtros (preenchendo qualquer outro campo, exceto o ID). Caso nenhum campo seja preenchido, todas as rotas serão exibidas.");
+
+
             if (!ValidarCampos.ValidacaoSemAviso(txt_id_motorista))
             {
 
@@ -841,7 +878,16 @@ namespace sgl
 
             if (resultado == DialogResult.Yes)
             {
-                OperacoesRota.ExcluirRota(txt_id_motorista.Text);
+                OperacoesMotorista.ExcluirMotorista(txt_id_motorista.Text);
+                Limpar.LimparCampos
+                (
+                txt_id_motorista,
+                txt_nome_motorista,
+                txt_cnh_motorista,
+                txt_telefone_motorista,
+                cb_situacao_motorista
+                );
+
                 return;
             }
 
@@ -865,18 +911,18 @@ namespace sgl
 
 
         }
-
     }
 
 
 
-        /*
 
-        -----------------------------------------------
-                Metodos 
-        -----------------------------------------------
+    /*
 
-        */
+    -----------------------------------------------
+            Metodos 
+    -----------------------------------------------
+
+    */
 
 
     public class OperacoesRota
@@ -1216,10 +1262,18 @@ namespace sgl
                     }
                     else
                     {
+                        MessageBox.Show("Rota excluída com sucesso!");
                         return true;
                     }
                 }
             }
+            catch (MySqlException ex) when (ex.Number == 1451) // Código do erro de foreign key constraint
+            {
+                MessageBox.Show("Não é possível excluir!\n\nExistem viagens associadas a ela no sistema.\nA rota será mantida para preservar o histórico.\n" +
+                    "Sugerimos que edite a situação do mesmo!");
+                return false;
+            }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao excluir rota! " + ex.Message);
@@ -1553,15 +1607,18 @@ namespace sgl
                     comando.Parameters.AddWithValue("@ID", txt_id_combustivel.Text);
                     if (comando.ExecuteNonQuery() == 0)
                     {
-                        MessageBox.Show("Rota não encontrada! Verifique o id!");
+                        MessageBox.Show("Combustivel não encontrado! Verifique o id!");
                         return false;
                     }
                     else
                     {
+                        MessageBox.Show("Combustivel excluído com sucesso!");
+
                         return true;
                     }
                 }
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao excluir combustivel! " + ex.Message);
@@ -1935,6 +1992,7 @@ namespace sgl
                     }
                     else
                     {
+                        MessageBox.Show("Viagem excluída com sucesso!");
                         return true;
                     }
                 }
@@ -2312,9 +2370,22 @@ namespace sgl
                     }
                     else
                     {
+                        MessageBox.Show("Veiculo excluído com sucesso!");
                         return true;
+
                     }
                 }
+
+            }
+            catch (MySqlException ex) when (ex.Number == 1451) // Código do erro de foreign key constraint
+            {
+                MessageBox.Show("Não é possível excluir!\n\nExistem viagens associadas a ela no sistema.\nA rota será mantida para preservar o histórico.\n" +
+                    "Sugerimos que edite a situação do mesmo!");
+                return false;
+
+                // Opcional: Focar em algum campo ou fazer alguma ação específica
+                // txtbx_idRota.Text = "";
+                // txtbx_idRota.Focus();
             }
             catch (Exception ex)
             {
@@ -2658,7 +2729,7 @@ namespace sgl
                 using (conexao = new MySqlConnection("Server = localhost; Port = 3306; Database = sgl_sql; Uid = root; Pwd =;"))
                 {
                     conexao.Open();
-                    sql = "DELETE FROM motorista WHERE motorista = @ID";
+                    sql = "DELETE FROM motorista WHERE motoristaID = @ID";
                     comando = new MySqlCommand(sql, conexao);
                     comando.Parameters.AddWithValue("@ID", id);
                     if (comando.ExecuteNonQuery() == 0)
@@ -2668,10 +2739,19 @@ namespace sgl
                     }
                     else
                     {
+                        MessageBox.Show("Motorista excluído com sucesso!");
+
                         return true;
                     }
                 }
             }
+            catch (MySqlException ex) when (ex.Number == 1451) // Código do erro de foreign key constraint
+            {
+                MessageBox.Show("Não é possível excluir!\n\nExistem viagens associadas a ela no sistema.\nA rota será mantida para preservar o histórico.\n" +
+                    "Sugerimos que edite a situação do mesmo!");
+                return false;
+            }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao excluir motorista! " + ex.Message);

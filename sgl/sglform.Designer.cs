@@ -654,6 +654,7 @@
             tool_vanish_veiculo.Name = "tool_vanish_veiculo";
             tool_vanish_veiculo.Size = new Size(32, 34);
             tool_vanish_veiculo.Text = "tool_vanish_veiculo";
+            tool_vanish_veiculo.Click += tool_vanish_veiculo_Click;
             // 
             // toolStripSeparator25
             // 
